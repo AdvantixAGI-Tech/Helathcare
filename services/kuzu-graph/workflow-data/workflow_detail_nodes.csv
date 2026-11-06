@@ -1,0 +1,20 @@
+id,name,category,description,color,shape
+D1_SYSTEMIC,Systemic Symptoms,Clinical Detail,"Weight loss; persistent fatigue; fever; night sweats; persistent or progressive pain",#DDEBF7,box
+D1_SURFACE,Surface and Skin Signs,Clinical Detail,"New or changing lump; mole changes; non-healing sore; skin changes; jaundice",#DDEBF7,box
+D1_BLEEDING,Unusual Bleeding,Clinical Detail,"Blood in stool; blood in urine; coughing blood; unexpected vaginal bleeding",#DDEBF7,box
+D1_RESPIRATORY,Respiratory Symptoms,Clinical Detail,"Persistent cough; hoarseness",#DDEBF7,box
+D1_DIGESTIVE,Digestive Symptoms,Clinical Detail,"Difficulty or painful swallowing; indigestion; difficulty eating; bowel changes",#DDEBF7,box
+D1_URINARY,Urinary Symptoms,Clinical Detail,"Urinary changes",#DDEBF7,box
+D1_BREAST,Breast Clinical Signs,Clinical Detail,"Lump or thickening; location; size; skin or shape change; nipple change; discharge; pain; duration; progression",#DDEBF7,box
+D1_CBC,CBC Assessment,Laboratory,"Hemoglobin; RBC; WBC; platelets; RBC-related indices; WBC differential",#E4DFEC,box
+D1_CMP,CMP Assessment,Laboratory,"ALP; AST; ALT; calcium; albumin; bilirubin; other metabolic measurements",#E4DFEC,box
+D1_INFLAMMATION,Inflammation Assessment,Laboratory,"CRP and ESR; previous value; current value; date and trend",#E4DFEC,box
+D1_IMAGING_METHOD,Imaging Method,Imaging,"Mammography; CT; MRI; ultrasound or other applicable imaging",#E4DFEC,box
+D1_LESION,Lesion Characteristics,Imaging,"Presence; location; size; shape; margins; count",#E4DFEC,box
+D1_SPREAD,Spread Assessment,Imaging,"Regional lymph-node findings and distant findings",#E4DFEC,box
+D1_BIOPSY,Biopsy Details,Pathology,"Biopsy method; date; anatomical site; specimen",#F4CCCC,box
+D1_HISTOLOGY,Histopathology,Pathology,"Histology; tumour classification; microscopic observations",#F4CCCC,box
+D1_HER2,HER2 Assessment,Biomarker,"IHC result; FISH result; ERBB2 signal; ratio; final HER2 status",#F8CBAD,box
+D1_ER,Estrogen Receptor,Biomarker,"ER staining result; positive percentage; final ER status",#F8CBAD,box
+D1_PR,Progesterone Receptor,Biomarker,"PR staining result; positive percentage; final PR status",#F8CBAD,box
+D1_METADATA,Clinical Measurement Metadata,Metadata,"Patient; age; assessment date; source; value; unit; reference range; previous and current values; duration; progression",#E7E6E6,note

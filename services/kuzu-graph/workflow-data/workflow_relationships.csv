@@ -1,0 +1,49 @@
+FROM,TO,relationship,branch_label,condition,evidence,line_style,sort_order
+INITIAL,PATIENT_PROFILE,FLOW,"","","Workflow",solid,1
+PATIENT_PROFILE,LIFESTYLE,FLOW,"","","Datasets 1 and 2",solid,2
+LIFESTYLE,SYMPTOM_DECISION,FLOW,"","","Dataset 2",solid,3
+SYMPTOM_DECISION,SCREENING,BRANCH,"No","No concerning symptoms","Conceptual workflow",solid,10
+SYMPTOM_DECISION,DIAGNOSTIC_ENCOUNTER,BRANCH,"Yes","Concerning symptoms present","Dataset 1",solid,11
+SCREENING,SUSPICIOUS_DECISION,FLOW,"Where applicable","","Conceptual workflow",solid,12
+DIAGNOSTIC_ENCOUNTER,CLINICAL_ASSESSMENT,FLOW,"","","Dataset 1",solid,13
+CLINICAL_ASSESSMENT,SUSPICIOUS_DECISION,FLOW,"","","Dataset 1",solid,14
+SUSPICIOUS_DECISION,ROUTINE_MONITORING,BRANCH,"No","No suspicious clinical finding","Conceptual workflow",solid,15
+SUSPICIOUS_DECISION,DIAGNOSTIC_WORKUP,BRANCH,"Yes","Suspicious clinical finding","Dataset 1",solid,16
+ROUTINE_MONITORING,FOLLOWUP,FLOW,"","","Dataset 1",solid,17
+DIAGNOSTIC_WORKUP,LAB_ASSESSMENT,HAS_COMPONENT,"Laboratory branch","","Dataset 1",solid,20
+DIAGNOSTIC_WORKUP,IMAGING_ASSESSMENT,HAS_COMPONENT,"Imaging branch","","Dataset 1",solid,21
+LAB_ASSESSMENT,ABNORMALITY_DECISION,FLOW,"","","Dataset 1",solid,22
+IMAGING_ASSESSMENT,ABNORMALITY_DECISION,FLOW,"","","Dataset 1",solid,23
+ABNORMALITY_DECISION,MONITOR_REASSESS,BRANCH,"No","No suspicious lesion or abnormality","Conceptual workflow",solid,24
+MONITOR_REASSESS,DIAGNOSTIC_WORKUP,REASSESS,"Repeat if indicated","","Conceptual workflow",dashed,25
+ABNORMALITY_DECISION,BIOPSY,BRANCH,"Yes","Suspicious lesion or abnormality","Dataset 1",solid,26
+BIOPSY,PATHOLOGY,FLOW,"","","Dataset 1",solid,30
+PATHOLOGY,MALIGNANCY_DECISION,FLOW,"","","Dataset 1",solid,31
+MALIGNANCY_DECISION,NON_MALIGNANT_FOLLOWUP,BRANCH,"No","Malignancy not confirmed","Conceptual workflow",solid,32
+NON_MALIGNANT_FOLLOWUP,FOLLOWUP,FLOW,"","","Conceptual workflow",solid,33
+MALIGNANCY_DECISION,CANCER_CLASSIFICATION,BRANCH,"Yes","Malignancy confirmed","Dataset 1",solid,34
+CANCER_CLASSIFICATION,BREAST_DECISION,FLOW,"","","Dataset 1",solid,35
+BREAST_DECISION,RECEPTOR_ASSESSMENT,BRANCH,"Yes","Breast-specific pathway","Dataset 1",solid,36
+BREAST_DECISION,TNM_ASSESSMENT,BRANCH,"No","Other cancer type","Dataset 3",solid,37
+RECEPTOR_ASSESSMENT,TNM_ASSESSMENT,FLOW,"Continue","","Datasets 1 and 3",solid,38
+TNM_ASSESSMENT,T_ASSESSMENT,HAS_COMPONENT,"T","","Dataset 3",solid,40
+TNM_ASSESSMENT,N_ASSESSMENT,HAS_COMPONENT,"N","","Dataset 3",solid,41
+TNM_ASSESSMENT,M_ASSESSMENT,HAS_COMPONENT,"M","","Dataset 3",solid,42
+T_ASSESSMENT,STAGE_GROUP,CONTRIBUTES_TO,"T category","","Dataset 3",solid,43
+N_ASSESSMENT,STAGE_GROUP,CONTRIBUTES_TO,"N category","","Dataset 3",solid,44
+M_ASSESSMENT,METASTASIS_DECISION,FLOW,"","","Dataset 3",solid,45
+METASTASIS_DECISION,STAGE_4,BRANCH,"M1","Distant metastasis identified","Dataset 3",solid,46
+METASTASIS_DECISION,INSITU_DECISION,BRANCH,"M0","No distant metastasis identified","Dataset 3",solid,47
+INSITU_DECISION,STAGE_0,BRANCH,"Yes / Tis","In situ where applicable","Dataset 3",solid,48
+INSITU_DECISION,STAGE_GROUP,BRANCH,"No","Not classified as in situ","Dataset 3",solid,49
+STAGE_GROUP,STAGE_1,BRANCH,"Stage I","Cancer-specific T N M combination","Dataset 3",solid,50
+STAGE_GROUP,STAGE_2,BRANCH,"Stage II","Cancer-specific T N M combination","Dataset 3",solid,51
+STAGE_GROUP,STAGE_3,BRANCH,"Stage III","Cancer-specific T N M combination","Dataset 3",solid,52
+STAGE_0,FOLLOWUP,FLOW,"","","Dataset 3",solid,53
+STAGE_1,FOLLOWUP,FLOW,"","","Dataset 3",solid,54
+STAGE_2,FOLLOWUP,FLOW,"","","Dataset 3",solid,55
+STAGE_3,FOLLOWUP,FLOW,"","","Dataset 3",solid,56
+STAGE_4,FOLLOWUP,FLOW,"","","Dataset 3",solid,57
+FOLLOWUP,PROGRESSION_DECISION,FLOW,"","","Datasets 1 and 3",solid,60
+PROGRESSION_DECISION,TNM_ASSESSMENT,REASSESS,"Yes","Progression or new finding","Conceptual workflow",dashed,61
+PROGRESSION_DECISION,TERMINAL,BRANCH,"No","No progression or new finding","Conceptual workflow",solid,62

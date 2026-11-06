@@ -1,0 +1,182 @@
+source_id,target_id,relationship,branch_label,condition,evidence,line_style,sort_order
+INITIAL,PATIENT_PROFILE,FLOW,,,Workflow,solid,1
+LIFESTYLE,LIFESTYLE_RISK_SUMMARY,FLOW,Summarize assessed risks,"",Conceptual workflow,solid,3
+SYMPTOM_DECISION,SCREENING,BRANCH,No,No concerning symptoms,Conceptual workflow,solid,10
+SYMPTOM_DECISION,DIAGNOSTIC_ENCOUNTER,BRANCH,Yes,Concerning symptoms present,Dataset 1,solid,11
+SCREENING,SUSPICIOUS_DECISION,FLOW,Where applicable,,Conceptual workflow,solid,12
+DIAGNOSTIC_ENCOUNTER,CLINICAL_ASSESSMENT,FLOW,,,Dataset 1,solid,13
+CLINICAL_ASSESSMENT,CLINICAL_FINDINGS_CONVERGENCE,CONTRIBUTES_TO,General clinical findings,"",Clinical workflow,solid,14
+SUSPICIOUS_DECISION,ROUTINE_MONITORING,BRANCH,No,No suspicious clinical finding,Conceptual workflow,solid,15
+SUSPICIOUS_DECISION,DIAGNOSTIC_WORKUP,BRANCH,Yes,Suspicious clinical finding,Dataset 1,solid,16
+ROUTINE_MONITORING,FOLLOWUP,FLOW,,,Dataset 1,solid,17
+DIAGNOSTIC_WORKUP,LAB_ASSESSMENT,HAS_COMPONENT,Laboratory branch,,Dataset 1,solid,20
+DIAGNOSTIC_WORKUP,IMAGING_ASSESSMENT,HAS_COMPONENT,Imaging branch,,Dataset 1,solid,21
+ABNORMALITY_DECISION,MONITOR_REASSESS,BRANCH,No - monitor,No suspicious lesion or abnormality,Conceptual workflow,solid,24
+MONITOR_REASSESS,FOLLOWUP,FLOW,Return to surveillance,"",Conceptual workflow,solid,25
+ABNORMALITY_DECISION,BIOPSY,BRANCH,Yes,Suspicious lesion or abnormality,Dataset 1,solid,26
+BIOPSY,PATHOLOGY,FLOW,,,Dataset 1,solid,30
+PATHOLOGY,MALIGNANCY_DECISION,CONFIRMS,Histopathology evidence,"",Clinical pathology,solid,31
+MALIGNANCY_DECISION,NON_MALIGNANT_FOLLOWUP,BRANCH,No,Malignancy not confirmed,Conceptual workflow,solid,32
+NON_MALIGNANT_FOLLOWUP,TERMINAL,FLOW,General care / close cancer pathway,Malignancy not confirmed,Conceptual workflow,solid,33
+MALIGNANCY_DECISION,CANCER_CLASSIFICATION,BRANCH,Yes,Malignancy confirmed,Dataset 1,solid,34
+CANCER_CLASSIFICATION,BREAST_DECISION,FLOW,,,Dataset 1,solid,35
+BREAST_DECISION,RECEPTOR_ASSESSMENT,BRANCH,Yes,Breast-specific pathway,Dataset 1,solid,36
+STAGING_SYSTEM_DECISION,TNM_ASSESSMENT,BRANCH,TNM applies,Applicable solid-tumour TNM system selected,Staging reference,solid,39
+TNM_ASSESSMENT,T_ASSESSMENT,HAS_COMPONENT,T,,Dataset 3,solid,40
+TNM_ASSESSMENT,N_ASSESSMENT,HAS_COMPONENT,N,,Dataset 3,solid,41
+TNM_ASSESSMENT,M_ASSESSMENT,HAS_COMPONENT,M,,Dataset 3,solid,42
+M_ASSESSMENT,TNM_CONVERGENCE,CONTRIBUTES_TO,Assessed category,"",TNM staging,solid,43
+N_ASSESSMENT,TNM_CONVERGENCE,CONTRIBUTES_TO,Assessed category,"",TNM staging,solid,43
+T_ASSESSMENT,TNM_CONVERGENCE,CONTRIBUTES_TO,Assessed category,"",TNM staging,solid,43
+TNM_CONVERGENCE,METASTASIS_DECISION,FLOW,Integrated T/N/M,"",TNM staging,solid,44
+METASTASIS_DECISION,M1_STAGE4_APPLICABILITY,BRANCH,M1 - distant metastasis,M1 identified,TNM assessment,solid,46
+METASTASIS_DECISION,INSITU_DECISION,BRANCH,M0,No distant metastasis identified,Dataset 3,solid,47
+INSITU_DECISION,STAGE_0,BRANCH,Yes / Tis,In situ where applicable,Dataset 3,solid,48
+INSITU_DECISION,STAGE_GROUP,BRANCH,No,Not classified as in situ,Dataset 3,solid,49
+STAGE_GROUP,STAGE_1,BRANCH,Stage I,Cancer-specific T N M combination,Dataset 3,solid,50
+STAGE_GROUP,STAGE_2,BRANCH,Stage II,Cancer-specific T N M combination,Dataset 3,solid,51
+STAGE_GROUP,STAGE_3,BRANCH,Stage III,Cancer-specific T N M combination,Dataset 3,solid,52
+FOLLOWUP,PROGRESSION_DECISION,FLOW,,,Datasets 1 and 3,solid,60
+PROGRESSION_DECISION,CLINICAL_ASSESSMENT,REASSESS,Yes - clinical reassessment,Progression concern or new finding,Conceptual workflow,solid,61
+PROGRESSION_DECISION,TERMINAL,BRANCH,No,No progression or new finding,Conceptual workflow,solid,62
+PATIENT_PROFILE,HEREDITARY_RISK_ASSESSMENT,FLOW,Assess inherited and familial risk,,,solid,100
+HEREDITARY_RISK_ASSESSMENT,FAMILY_HISTORY_DETAILS,ASSESSES,Structured family history,,,solid,101
+FAMILY_HISTORY_DETAILS,HEREDITARY_EVAL_DECISION,INFORMS,Family pattern and phenotype,,,solid,102
+HEREDITARY_EVAL_DECISION,GENETIC_COUNSELLING,BRANCH,Yes - evaluation indicated,Use applicable clinical guidance; no universal numerical cutoff,,solid,103
+HEREDITARY_EVAL_DECISION,HEREDITARY_RISK_INTEGRATION,BRANCH,No - integrate available history,No additional hereditary evaluation indicated at this point,,solid,104
+GENETIC_COUNSELLING,GERMLINE_INTERPRETATION,FLOW,Testing when clinically appropriate,,,solid,105
+GERMLINE_INTERPRETATION,HEREDITARY_RISK_INTEGRATION,CONVERGES,Clinically interpreted germline result,,,solid,106
+PRS_ASSESSMENT,HEREDITARY_RISK_INTEGRATION,CONVERGES,Relative polygenic susceptibility,,,solid,108
+HEREDITARY_RISK_ASSESSMENT,HEREDITARY_SYNDROMES,DETAIL,Syndrome context,,,dashed,109
+HEREDITARY_SYNDROMES,HEREDITARY_EVAL_DECISION,INFORMS,Phenotype-appropriate syndrome context,,,dashed,110
+HEREDITARY_RISK_ASSESSMENT,HEREDITARY_GENES,DETAIL,Gene context,,,dashed,111
+HEREDITARY_GENES,GERMLINE_INTERPRETATION,INFORMS,Test and interpret relevant genes,,,dashed,112
+PRS_LIMITATIONS,PRS_ASSESSMENT,CAUTION,Population and validation limitations,,,dashed,113
+HEREDITARY_RISK_INTEGRATION,LIFESTYLE,FLOW,Continue multidomain risk assessment,,,solid,114
+LIFESTYLE_RISK_SUMMARY,INTEGRATED_BASELINE_RISK,CONVERGES,Lifestyle and environmental context,,,solid,115
+PATIENT_PROFILE,INFECTION_HISTORY,ASSESSES,Relevant infection history,,,dashed,116
+INFECTION_HISTORY,INTEGRATED_BASELINE_RISK,CONVERGES,Infection-related risk context,,,solid,117
+MULTIFACTORIAL_RISK_CONTEXT,INTEGRATED_BASELINE_RISK,INFORMS,Interaction context,,,dashed,118
+HEREDITARY_RISK_INTEGRATION,INTEGRATED_BASELINE_RISK,INFORMS,Inherited-risk context,,,dashed,119
+RISK_SUSPICION_DIAGNOSIS_CAUTION,INTEGRATED_BASELINE_RISK,CAUTION,Do not infer diagnosis from risk,,,dashed,120
+INTEGRATED_BASELINE_RISK,MEDICAL_SCREENING_HISTORY,FLOW,Review prior clinical context,,,solid,121
+MEDICAL_SCREENING_HISTORY,TEMPORAL_HISTORY_ASSESSMENT,FLOW,Compare with prior history,,,solid,122
+LONGITUDINAL_CONTEXT,TEMPORAL_HISTORY_ASSESSMENT,INFORMS,Update changing information,,,dashed,123
+TEMPORAL_HISTORY_ASSESSMENT,SYMPTOM_DECISION,FLOW,Evaluate current symptoms and changes,,,solid,124
+D1_BREAST,CLINICAL_FINDINGS_CONVERGENCE,CONTRIBUTES_TO,Breast-specific findings where applicable,"",Clinical dataset,solid,141
+CLINICAL_FINDINGS_CONVERGENCE,SUSPICIOUS_DECISION,FLOW,Integrated clinical review,"",Clinical workflow,solid,142
+D1_CBC,LAB_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Result and trend,"",Clinical dataset,solid,221
+D1_CMP,LAB_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Result and trend,"",Clinical dataset,solid,221
+D1_INFLAMMATION,LAB_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Result and trend,"",Clinical dataset,solid,221
+D1_IMAGING_METHOD,IMAGING_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Imaging evidence,"",Clinical dataset,solid,222
+D1_LESION,IMAGING_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Imaging evidence,"",Clinical dataset,solid,222
+D1_SPREAD,IMAGING_RESULTS_CONVERGENCE,CONTRIBUTES_TO,Imaging evidence,"",Clinical dataset,solid,222
+LAB_RESULTS_CONVERGENCE,INTEGRATED_DIAGNOSTIC_FINDINGS,CONTRIBUTES_TO,Laboratory interpretation,"",Clinical workflow,solid,223
+IMAGING_RESULTS_CONVERGENCE,INTEGRATED_DIAGNOSTIC_FINDINGS,CONTRIBUTES_TO,Imaging interpretation,"",Clinical workflow,solid,224
+CLINICAL_FINDINGS_CONVERGENCE,INTEGRATED_DIAGNOSTIC_FINDINGS,CONTRIBUTES_TO,Clinical context,"",Clinical workflow,solid,225
+INTEGRATED_DIAGNOSTIC_FINDINGS,ABNORMALITY_DECISION,FLOW,Review combined evidence,"",Clinical workflow,solid,226
+CLINICAL_ASSESSMENT,CLINICAL_WEIGHT_LOSS,ASSESSES,Weight-loss assessment,,Clinical source,solid,331
+CLINICAL_ASSESSMENT,CLINICAL_PERSISTENT_PAIN,ASSESSES,Pain assessment,,Clinical source,solid,332
+CLINICAL_ASSESSMENT,CLINICAL_BLEEDING,ASSESSES,Bleeding assessment,,Clinical source,solid,333
+CLINICAL_WEIGHT_LOSS,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,334
+CLINICAL_PERSISTENT_PAIN,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,335
+CLINICAL_BLEEDING,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,336
+D1_ER,BREAST_PROFILE_CONVERGENCE,CONTRIBUTES_TO,Biomarker result,"",Breast biomarker assessment,solid,371
+D1_HER2,BREAST_PROFILE_CONVERGENCE,CONTRIBUTES_TO,Biomarker result,"",Breast biomarker assessment,solid,371
+D1_PR,BREAST_PROFILE_CONVERGENCE,CONTRIBUTES_TO,Biomarker result,"",Breast biomarker assessment,solid,371
+BREAST_DECISION,STAGING_SYSTEM_DECISION,BRANCH,No - non-breast pathway,Breast-specific biomarkers do not apply,Conceptual workflow,solid,373
+BREAST_PROFILE_CONVERGENCE,STAGING_SYSTEM_DECISION,FLOW,Breast profile identified,"",Breast-specific workflow,solid,374
+STAGING_SYSTEM_DECISION,ALTERNATIVE_STAGING,BRANCH,Alternative system applies,Cancer type uses another applicable system,Staging reference,solid,391
+ALTERNATIVE_STAGING,STAGE_RESULT_CONVERGENCE,RESULT,Cancer-specific stage or extent,"",Applicable staging system,solid,392
+T_ASSESSMENT,D3_T1_T4,HAS_CATEGORY,T category,"",TNM staging reference,dashed,431
+T_ASSESSMENT,D3_TIS,HAS_CATEGORY,T category,"",TNM staging reference,dashed,431
+N_ASSESSMENT,D3_N0,HAS_CATEGORY,N category,"",TNM staging reference,dashed,432
+N_ASSESSMENT,D3_N1_N3,HAS_CATEGORY,N category,"",TNM staging reference,dashed,432
+M_ASSESSMENT,D3_M0,HAS_CATEGORY,M category,"",TNM staging reference,dashed,433
+M_ASSESSMENT,D3_M1,HAS_CATEGORY,M category,"",TNM staging reference,dashed,433
+M1_STAGE4_APPLICABILITY,STAGE_4,BRANCH,Yes - applicable system defines Stage IV,Cancer-specific mapping confirmed,Applicable staging system,solid,461
+M1_STAGE4_APPLICABILITY,CANCER_SPECIFIC_STAGE_RESULT,BRANCH,No - use selected system definition,Direct Stage IV mapping not applicable,Applicable staging system,solid,462
+CANCER_SPECIFIC_STAGE_RESULT,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_0,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_1,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_2,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_3,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_4,STAGE_RESULT_CONVERGENCE,CONVERGES_TO,Applicable stage result,"",Selected staging system,solid,550
+STAGE_RESULT_CONVERGENCE,STAGE_PROFILE_INTEGRATION,CONTRIBUTES_TO,Stage,"",Staging result,solid,560
+BREAST_PROFILE_CONVERGENCE,STAGE_PROFILE_INTEGRATION,CONTRIBUTES_TO,HER2 / ER / PR where applicable,Breast-specific profile,Breast staging reference,solid,561
+PATHOLOGY,GRADE_PROFILE_PROGNOSIS,SUPPORTS,Histology and grade/profile evidence,"",Pathology and staging reference,dashed,562
+GRADE_PROFILE_PROGNOSIS,STAGE_PROFILE_INTEGRATION,CONTRIBUTES_TO,Grade and tumour profile,"",Staging reference,solid,563
+STAGE_PROFILE_INTEGRATION,TREATMENT_PLANNING,INFORMS,Integrated stage/profile,"",Clinical planning context,solid,564
+CLINICAL_ASSESSMENT,D1_BREAST,ASSESSES,Breast clinical signs,,Dataset 1,dashed,1006
+LAB_ASSESSMENT,D1_CBC,INCLUDES,CBC,,Dataset 1,dashed,1007
+LAB_ASSESSMENT,D1_CMP,INCLUDES,CMP,,Dataset 1,dashed,1008
+LAB_ASSESSMENT,D1_INFLAMMATION,INCLUDES,CRP and ESR,,Dataset 1,dashed,1009
+IMAGING_ASSESSMENT,D1_IMAGING_METHOD,INCLUDES,Imaging methods,,Dataset 1,dashed,1010
+IMAGING_ASSESSMENT,D1_LESION,EVALUATES,Lesion characteristics,,Dataset 1,dashed,1011
+IMAGING_ASSESSMENT,D1_SPREAD,EVALUATES,Regional and distant spread,,Dataset 1,dashed,1012
+BIOPSY,D1_BIOPSY,RECORDS,Biopsy details,,Dataset 1,dashed,1013
+RECEPTOR_ASSESSMENT,D1_HER2,TESTS,HER2,,Dataset 1,dashed,1015
+RECEPTOR_ASSESSMENT,D1_ER,TESTS,ER,,Dataset 1,dashed,1016
+RECEPTOR_ASSESSMENT,D1_PR,TESTS,PR,,Dataset 1,dashed,1017
+HEREDITARY_RISK_ASSESSMENT,PRS_USE_DECISION,DECIDES,Assess PRS suitability,,,solid,1065
+PRS_USE_DECISION,PRS_ASSESSMENT,BRANCH,Yes - validated and appropriate,Relevant score available with suitable validation and calibration,,solid,1066
+PRS_USE_DECISION,HEREDITARY_RISK_INTEGRATION,BRANCH,No - do not use PRS,"Unavailable, unvalidated or inappropriate for this context",,solid,1067
+LIFESTYLE,D2_SMOKING,ASSESSES,Smoking and tobacco,,Dataset 2,dashed,2000
+LIFESTYLE,D2_ALCOHOL,ASSESSES,Alcohol consumption,,Dataset 2,dashed,2001
+LIFESTYLE,D2_DIET,ASSESSES,Diet and nutrition,,Dataset 2,dashed,2002
+LIFESTYLE,D2_RED_MEAT,ASSESSES,Red and processed meat,,Dataset 2,dashed,2003
+LIFESTYLE,D2_OBESITY,ASSESSES,Obesity and body weight,,Dataset 2,dashed,2009
+LIFESTYLE,D2_ACTIVITY,ASSESSES,Physical activity,,Dataset 2,dashed,2010
+LIFESTYLE,D2_UV,ASSESSES,Ultraviolet exposure,,Dataset 2,dashed,2011
+TNM_ASSESSMENT,D3_OVERVIEW,INCLUDES,Staging overview,,Dataset 3,dashed,3000
+METASTASIS_DECISION,D3_M0,EVALUATES,No distant metastasis,,Dataset 3,dashed,3024
+METASTASIS_DECISION,D3_M1,EVALUATES,Distant metastasis present,,Dataset 3,dashed,3025
+INSITU_DECISION,D3_TIS,EVALUATES,Carcinoma in situ,,Dataset 3,dashed,3027
+D3_TIS,STAGE_0,MAPS_TO,Stage 0 when applicable,,Dataset 3,dashed,3028
+PATIENT_PROFILE,LUNG_PROBABILITY_MODEL,HAS_BRANCH,Lung probability,,Clinical,solid,5000
+LUNG_PROBABILITY_MODEL,LUNG_GENDER_DECISION,FLOW,Select branch,"",Source probability model,solid,5001
+LUNG_GENDER_DECISION,LUNG_FEMALE_SMOKING,BRANCH,Female,Gender = female,Source probability model,solid,5002
+LUNG_GENDER_DECISION,LUNG_MALE_SMOKING,BRANCH,Male,Gender = male,Source probability model,solid,5003
+LUNG_FEMALE_SMOKING,LUNG_FEMALE_RISK_CALC,BRANCH,Current smoker,Current smoker,Source probability model,solid,5004
+LUNG_FEMALE_SMOKING,LUNG_FEMALE_RISK_CALC,BRANCH,Never smoker,Never smoker,Source probability model,solid,5005
+LUNG_FEMALE_SMOKING,LUNG_QUIT_AGE,BRANCH,Former smoker,Former smoker,Source probability model,solid,5006
+LUNG_QUIT_AGE,LUNG_FEMALE_RISK_CALC,FLOW,Age recorded / unavailable,"",Source probability model,solid,5007
+LUNG_FEMALE_RISK_CALC,LUNG_FEMALE_VALUES,RESULT,Risk result,"",Source probability table,solid,5008
+LUNG_MALE_SMOKING,LUNG_MALE_RISK_CALC,BRANCH,Current smoker,Current smoker,Source probability model,solid,5009
+LUNG_MALE_SMOKING,LUNG_MALE_RISK_CALC,BRANCH,Never smoker,Never smoker; source value unavailable,Source probability model,solid,5010
+LUNG_MALE_SMOKING,LUNG_MALE_QUIT_AGE,BRANCH,Former smoker,Former smoker,Source probability model,solid,5011
+LUNG_MALE_QUIT_AGE,LUNG_MALE_RISK_CALC,FLOW,Age recorded / unavailable,"",Source probability model,solid,5012
+LUNG_MALE_RISK_CALC,LUNG_MALE_VALUES,RESULT,Risk result,"",Source probability table,solid,5013
+LUNG_FEMALE_VALUES,LUNG_RISK_ACTION_DECISION,CONVERGES_TO,Probability result,"",Source probability model,solid,5014
+LUNG_MALE_VALUES,LUNG_RISK_ACTION_DECISION,CONVERGES_TO,Probability result,"",Source probability model,solid,5014
+D2_SMOKING,LUNG_PROBABILITY_MODEL,SUPPLIES,Smoking status,"",Lifestyle record,dashed,5015
+LUNG_RISK_ACTION_DECISION,SCREENING,BRANCH,Screening or clinical review indicated,Use applicable guidance and clinical judgement; no universal cutoff assumed,Conceptual workflow,solid,5016
+LUNG_RISK_ACTION_DECISION,LIFESTYLE_RISK_SUMMARY,BRANCH,Continue general risk assessment,Screening or focused review not indicated,Conceptual workflow,solid,5017
+TNM_ASSESSMENT,CLINICAL_TNM_FIELDS,RECORDS,Clinical fields,,Clinical,dashed,5040
+TNM_ASSESSMENT,D3_CLINICAL_STAGE,RECORDS,Pre-treatment cTNM,"",Staging reference,dashed,5041
+D2_ACTIVITY,ACTIVITY_ADDITIONAL_VALUE,HAS_REPORTED_VALUE,13% finding,,Lifestyle,dashed,5100
+D2_UV,UV_REPORTED_VALUE,HAS_REPORTED_VALUE,90% finding,,Lifestyle,dashed,5110
+D2_SMOKING,LARYNGEAL_REPORTED_VALUE,HAS_REPORTED_VALUE,>50% finding,,Lifestyle,dashed,5120
+LIFESTYLE,COMBINED_LIFESTYLE_VALUE,HAS_REPORTED_VALUE,Combined estimate,,Lifestyle,dashed,5130
+LIFESTYLE,ENVIRONMENTAL_EXPOSURES,ASSESSES,Environment,,Lifestyle,dashed,5140
+LIFESTYLE,FOOD_EVIDENCE_CAUTION,ASSESSES,Food evidence,,Lifestyle,dashed,5150
+LIFESTYLE,LIFESTYLE_PATHWAYS,DESCRIBES,Mechanisms,,Lifestyle,dashed,5160
+D2_ACTIVITY,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_ALCOHOL,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_DIET,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_OBESITY,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_RED_MEAT,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_SMOKING,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+D2_UV,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+ENVIRONMENTAL_EXPOSURES,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Risk/protective context,"",Lifestyle evidence,dashed,5170
+FOOD_EVIDENCE_CAUTION,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Evidence context and limitations,"",Lifestyle source,dashed,5171
+LIFESTYLE_PATHWAYS,LIFESTYLE_RISK_SUMMARY,CONTRIBUTES_TO,Evidence context and limitations,"",Lifestyle source,dashed,5171
+TNM_ASSESSMENT,POST_TREATMENT_RESTAGING,HAS_BRANCH,yTNM and rTNM,,Staging,dashed,5200
+TNM_ASSESSMENT,STAGE_EXTENT_SYSTEMS,HAS_BRANCH,Stage and SEER,,Staging,dashed,5210
+TNM_ASSESSMENT,STAGING_INVESTIGATIONS,USES_EVIDENCE,Investigations,,Staging,dashed,5220
+TNM_ASSESSMENT,STAGING_CAUTION,HAS_CAUTION,Cancer-specific,,Staging,dashed,5250
+TREATMENT_PLANNING,SURGICAL_PATHOLOGY_DECISION,FLOW,After initial treatment decision,"",Conceptual workflow,solid,5350
+SURGICAL_PATHOLOGY_DECISION,FOLLOWUP,BRANCH,No - pTNM not available/applicable,No adequate surgical specimen,Staging reference,solid,5360
+SURGICAL_PATHOLOGY_DECISION,SURGICAL_PATHOLOGY,BRANCH,Yes - surgical pathology available,Adequate surgical specimen and pathology,Staging reference,solid,5361
+SURGICAL_PATHOLOGY,D3_PATH_STAGE,SUPPORTS,Derive pTNM where applicable,"",Surgical pathology,solid,5362
+D3_PATH_STAGE,FOLLOWUP,FLOW,Record postoperative pathological stage and review plan,"",Staging reference,solid,5363

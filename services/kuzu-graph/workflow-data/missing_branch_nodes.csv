@@ -1,0 +1,20 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+LUNG_PROBABILITY_MODEL,Lung Cancer Probability Model,Process,Clinical,"Branches by gender, smoking status and quit-smoking age",,,Clinical,5000,#DDEBF7,box
+LUNG_FEMALE_VALUES,Female Probability Values,Reported Value,Clinical,"Smoker 0.185 (18.5%); quit smoker 0.026 (2.6%); nonsmoker 0.004 (0.4%)",,,Clinical,5010,#E7E6E6,note
+LUNG_MALE_VALUES,Male Probability Values,Reported Value,Clinical,"Smoker 0.244 (24.4%); quit smoker 0.055 (5.5%); nonsmoker value unavailable in source",,,Clinical,5020,#E7E6E6,note
+LUNG_QUIT_AGE,Quit-Smoking Age,Clinical Detail,Clinical,"Record cessation age or mark it unavailable",,,Clinical,5030,#DDEBF7,box
+CLINICAL_TNM_FIELDS,Recorded TNM Clinical Fields,Clinical Detail,Clinical,"Primary tumour size/local extension; involved-node count; micro/macrometastasis; metastasis location",,,Clinical,5040,#DDEBF7,box
+ACTIVITY_ADDITIONAL_VALUE,Additional Activity Finding,Reported Value,Lifestyle,"Initially inactive men increasing activity: about 13% lower reported risk",,,Lifestyle,5100,#E7E6E6,note
+UV_REPORTED_VALUE,UV Reported Value,Reported Value,Lifestyle,"About 90% of skin cancers attributed to UV exposure in the cited source",,,Lifestyle,5110,#E7E6E6,note
+LARYNGEAL_REPORTED_VALUE,Laryngeal Smoking Value,Reported Value,Lifestyle,"Smoking-attributable fraction exceeds 50% in the cited analysis",,,Lifestyle,5120,#E7E6E6,note
+COMBINED_LIFESTYLE_VALUE,Combined Lifestyle Impact,Reported Value,Lifestyle,"About 18% of cancer cases and 16% of cancer deaths in one reviewed estimate",,,Lifestyle,5130,#E7E6E6,note
+ENVIRONMENTAL_EXPOSURES,Environmental Exposures,Lifestyle Detail,Lifestyle,"Air and water quality; inorganic arsenic; occupational glyphosate, malathion and diazinon",,,Lifestyle,5140,#FFE699,box
+FOOD_EVIDENCE_CAUTION,Food Evidence and Cautions,Lifestyle Detail,Lifestyle,"High-temperature cooking; acrylamide uncertainty; glycemic load; very hot drinks; coffee; GM, irradiated food, microwave, supplements and detox claims",,,Lifestyle,5150,#FFE699,box
+LIFESTYLE_PATHWAYS,Lifestyle Biological Pathways,Lifestyle Detail,Lifestyle,"DNA damage; acetaldehyde; oxidative stress; inflammation; hormonal/metabolic/immune and microbiome pathways; tobacco-alcohol and alcohol-hepatitis interactions",,,Lifestyle,5160,#FFE699,box
+POST_TREATMENT_RESTAGING,Post-Treatment and Restaging,Staging Detail,TNM,"yTNM after specified preoperative treatment; rTNM for recurrence; retain original diagnosis stage",,,Staging,5200,#C6E0B4,box
+STAGE_EXTENT_SYSTEMS,Stage Subdivisions and SEER Extent,Staging Detail,TNM,"IIA/IIB; IIIA/IIIB/IIIC; SEER In situ, Localized, Regional, Distant and Unknown",,,Staging,5210,#C6E0B4,box
+STAGING_INVESTIGATIONS,Staging Investigations,Staging Detail,TNM,"Physical examination; CT; MRI; ultrasound; PET/PET-CT; endoscopy; biopsy and selected laboratory tests",,,Staging,5220,#E4DFEC,box
+ALTERNATIVE_STAGING,Alternative Staging Systems,Staging Detail,TNM,"Lugano for selected lymphomas; FIGO for female reproductive cancers; conventional TNM may not apply to leukemia or many brain/CNS tumours",,,Staging,5230,#C6E0B4,box
+GRADE_PROFILE_PROGNOSIS,Grade Profile and Prognosis,Staging Detail,TNM,"Stage is anatomical extent; grade is differentiation; profile includes histology, biomarkers and molecular/genetic features; stage is not individual prognosis",,,Staging,5240,#C6E0B4,box
+STAGING_CAUTION,Cancer-Specific Staging Caution,Caution,TNM,"Stage 0 and TNM groupings are cancer-specific; map M1 to Stage IV only where the applicable cancer-specific system defines it",,,Staging,5250,#E7E6E6,note
+TREATMENT_PLANNING,Multidisciplinary Treatment Planning,Process,Treatment,"Stage, profile/grade, patient factors and preferences guide surgery, radiation, chemotherapy, immunotherapy, targeted/hormone/systemic therapy and supportive or palliative care",,,All,5300,#F8CBAD,box

@@ -1,0 +1,9 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+LUNG_GENDER_DECISION,Gender for Lung Risk Model,Decision,Clinical,Select the sex-specific probability branch recorded in the source model,,,Clinical,5001,#FFE699,diamond
+LUNG_FEMALE_SMOKING,Female Smoking Status,Decision,Clinical,Current smoker former smoker or never smoker,,,Clinical,5002,#FFE699,diamond
+LUNG_MALE_SMOKING,Male Smoking Status,Decision,Clinical,Current smoker former smoker or never smoker,,,Clinical,5003,#FFE699,diamond
+LUNG_FEMALE_RISK_CALC,Female Lung Risk Calculation,Process,Clinical,Apply female smoking status and quit-smoking age when applicable,,,Clinical,5005,#DDEBF7,box
+LUNG_MALE_QUIT_AGE,Quit-Smoking Age - Male Branch,Clinical Detail,Clinical,Record cessation age for former smokers or mark it unavailable,,,Clinical,5006,#DDEBF7,box
+LUNG_MALE_RISK_CALC,Male Lung Risk Calculation,Process,Clinical,Apply male smoking status and quit-smoking age when applicable,,,Clinical,5007,#DDEBF7,box
+LIFESTYLE_RISK_SUMMARY,Lifestyle Risk Summary,Process,Lifestyle,Combine assessed lifestyle and exposure factors to inform risk-aware screening and clinical review,,,Lifestyle,5180,#FFE699,box
+TNM_CONVERGENCE,TNM Category Integration,Process,Staging,Combine the assessed T N and M categories before cancer-specific stage grouping,,,Staging,4050,#C6E0B4,box

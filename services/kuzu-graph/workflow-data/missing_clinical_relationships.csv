@@ -1,0 +1,7 @@
+source_id,target_id,relationship,branch_label,condition,evidence,line_style,sort_order
+CLINICAL_ASSESSMENT,CLINICAL_WEIGHT_LOSS,ASSESSES,Weight-loss assessment,,Clinical source,solid,331
+CLINICAL_ASSESSMENT,CLINICAL_PERSISTENT_PAIN,ASSESSES,Pain assessment,,Clinical source,solid,332
+CLINICAL_ASSESSMENT,CLINICAL_BLEEDING,ASSESSES,Bleeding assessment,,Clinical source,solid,333
+CLINICAL_WEIGHT_LOSS,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,334
+CLINICAL_PERSISTENT_PAIN,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,335
+CLINICAL_BLEEDING,CLINICAL_FINDINGS_CONVERGENCE,CONVERGES,Clinical finding,,Clinical source,solid,336

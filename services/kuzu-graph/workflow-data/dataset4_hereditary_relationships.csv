@@ -1,0 +1,26 @@
+source_id,target_id,relationship,branch_label,condition,evidence,line_style,sort_order
+PATIENT_PROFILE,HEREDITARY_RISK_ASSESSMENT,FLOW,Assess inherited and familial risk,,,solid,100
+HEREDITARY_RISK_ASSESSMENT,FAMILY_HISTORY_DETAILS,ASSESSES,Structured family history,,,solid,101
+FAMILY_HISTORY_DETAILS,HEREDITARY_EVAL_DECISION,INFORMS,Family pattern and phenotype,,,solid,102
+HEREDITARY_EVAL_DECISION,GENETIC_COUNSELLING,BRANCH,Yes - evaluation indicated,"Use applicable clinical guidance; no universal numerical cutoff",,solid,103
+HEREDITARY_EVAL_DECISION,HEREDITARY_RISK_INTEGRATION,BRANCH,No - integrate available history,"No additional hereditary evaluation indicated at this point",,solid,104
+GENETIC_COUNSELLING,GERMLINE_INTERPRETATION,FLOW,Testing when clinically appropriate,,,solid,105
+GERMLINE_INTERPRETATION,HEREDITARY_RISK_INTEGRATION,CONVERGES,Clinically interpreted germline result,,,solid,106
+HEREDITARY_RISK_ASSESSMENT,PRS_ASSESSMENT,ASSESSES,PRS when available and appropriate,,,solid,107
+PRS_ASSESSMENT,HEREDITARY_RISK_INTEGRATION,CONVERGES,Relative polygenic susceptibility,,,solid,108
+HEREDITARY_RISK_ASSESSMENT,HEREDITARY_SYNDROMES,DETAIL,Syndrome context,,,dashed,109
+HEREDITARY_SYNDROMES,HEREDITARY_EVAL_DECISION,INFORMS,Phenotype-appropriate syndrome context,,,dashed,110
+HEREDITARY_RISK_ASSESSMENT,HEREDITARY_GENES,DETAIL,Gene context,,,dashed,111
+HEREDITARY_GENES,GERMLINE_INTERPRETATION,INFORMS,Test and interpret relevant genes,,,dashed,112
+PRS_LIMITATIONS,PRS_ASSESSMENT,CAUTION,Population and validation limitations,,,dashed,113
+HEREDITARY_RISK_INTEGRATION,LIFESTYLE,FLOW,Continue multidomain risk assessment,,,solid,114
+LIFESTYLE_RISK_SUMMARY,INTEGRATED_BASELINE_RISK,CONVERGES,Lifestyle and environmental context,,,solid,115
+PATIENT_PROFILE,INFECTION_HISTORY,ASSESSES,Relevant infection history,,,dashed,116
+INFECTION_HISTORY,INTEGRATED_BASELINE_RISK,CONVERGES,Infection-related risk context,,,solid,117
+MULTIFACTORIAL_RISK_CONTEXT,INTEGRATED_BASELINE_RISK,INFORMS,Interaction context,,,dashed,118
+HEREDITARY_RISK_INTEGRATION,INTEGRATED_BASELINE_RISK,INFORMS,Inherited-risk context,,,dashed,119
+RISK_SUSPICION_DIAGNOSIS_CAUTION,INTEGRATED_BASELINE_RISK,CAUTION,Do not infer diagnosis from risk,,,dashed,120
+INTEGRATED_BASELINE_RISK,MEDICAL_SCREENING_HISTORY,FLOW,Review prior clinical context,,,solid,121
+MEDICAL_SCREENING_HISTORY,TEMPORAL_HISTORY_ASSESSMENT,FLOW,Compare with prior history,,,solid,122
+LONGITUDINAL_CONTEXT,TEMPORAL_HISTORY_ASSESSMENT,INFORMS,Update changing information,,,dashed,123
+TEMPORAL_HISTORY_ASSESSMENT,SYMPTOM_DECISION,FLOW,Evaluate current symptoms and changes,,,solid,124

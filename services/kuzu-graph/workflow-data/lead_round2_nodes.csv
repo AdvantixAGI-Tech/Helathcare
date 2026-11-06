@@ -1,0 +1,14 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+LUNG_RISK_ACTION_DECISION,Lung-Risk Result Action?,Decision,Clinical,Use the source-model result with applicable screening guidance and clinical judgement; no universal numerical cutoff is assumed,,,Clinical,5016,#FFE699,diamond
+CLINICAL_FINDINGS_CONVERGENCE,Integrated Clinical Findings,Process,Clinical,Converge general clinical assessment with cancer-specific clinical modules where applicable,,,Clinical,131,#DDEBF7,box
+LAB_RESULTS_CONVERGENCE,Integrated Laboratory Findings,Process,Laboratory,Converge CBC CMP CRP ESR and relevant trends into one laboratory interpretation,,,Clinical,221,#E4DFEC,box
+IMAGING_RESULTS_CONVERGENCE,Integrated Imaging Findings,Process,Imaging,Converge imaging method lesion characteristics and regional or distant spread findings,,,Clinical,222,#E4DFEC,box
+INTEGRATED_DIAGNOSTIC_FINDINGS,Integrated Diagnostic Findings,Process,Investigation,Combine clinical laboratory and imaging evidence before deciding whether an abnormality requires tissue diagnosis,,,Clinical,223,#DDEBF7,box
+STAGING_SYSTEM_DECISION,Which Staging System Applies?,Decision,Staging,Select TNM or an applicable cancer-specific alternative based on cancer type and current classification guidance,,,Staging,390,#FFE699,diamond
+BREAST_PROFILE_CONVERGENCE,Breast Biomarker Profile Integration,Process,Biomarker,Converge HER2 ER and PR results for breast-specific stage/profile interpretation and treatment planning,,,Clinical,371,#F8CBAD,box
+STAGE_RESULT_CONVERGENCE,Applicable Cancer Stage Result,Process,Staging,Converge the result from TNM or the selected cancer-specific alternative staging system,,,Staging,550,#C6E0B4,box
+STAGE_PROFILE_INTEGRATION,Stage and Tumour Profile Integration,Process,Staging,Integrate applicable stage grade histology biomarkers and molecular or genetic profile without treating stage as individual prognosis,,,Staging,560,#C6E0B4,box
+M1_STAGE4_APPLICABILITY,Does the Applicable System Map M1 to Stage IV?,Decision,Staging,Apply only the selected cancer-specific staging definition; do not assume a universal mapping,,,Staging,445,#FFE699,diamond
+CANCER_SPECIFIC_STAGE_RESULT,Other Cancer-Specific Stage Result,Process,Staging,Record the stage or extent defined by the applicable cancer-specific system when a direct M1 to Stage IV mapping is not appropriate,,,Staging,549,#C6E0B4,box
+SURGICAL_PATHOLOGY_DECISION,Surgical Specimen Available for Pathological Staging?,Decision,Pathology,pTNM is considered only when adequate surgical and pathological information is available,,,Clinical,5360,#FFE699,diamond
+SURGICAL_PATHOLOGY,Surgical Pathology Review,Process,Pathology,Review resection specimen primary tumour and regional nodes to support pathological TNM where applicable,,,Clinical,5361,#F4CCCC,box

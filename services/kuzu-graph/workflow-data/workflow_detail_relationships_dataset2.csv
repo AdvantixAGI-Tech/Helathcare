@@ -1,0 +1,23 @@
+source_id,target_id,relationship,branch_label,evidence
+LIFESTYLE,D2_SMOKING,ASSESSES,Smoking and tobacco,Dataset 2
+LIFESTYLE,D2_ALCOHOL,ASSESSES,Alcohol consumption,Dataset 2
+LIFESTYLE,D2_DIET,ASSESSES,Diet and nutrition,Dataset 2
+LIFESTYLE,D2_RED_MEAT,ASSESSES,Red and processed meat,Dataset 2
+LIFESTYLE,D2_INFLAMMATION,ASSESSES,Chronic inflammation,Dataset 2
+LIFESTYLE,D2_ANTI_INFLAMMATORY,ASSESSES,Anti-inflammatory diet,Dataset 2
+LIFESTYLE,D2_DIET_PATTERNS,ASSESSES,Healthy dietary patterns,Dataset 2
+LIFESTYLE,D2_MICROBIOME,ASSESSES,Gut microbiome,Dataset 2
+LIFESTYLE,D2_FOOD_PREPARATION,ASSESSES,Food preparation,Dataset 2
+LIFESTYLE,D2_OBESITY,ASSESSES,Obesity and body weight,Dataset 2
+LIFESTYLE,D2_ACTIVITY,ASSESSES,Physical activity,Dataset 2
+LIFESTYLE,D2_UV,ASSESSES,Ultraviolet exposure,Dataset 2
+LIFESTYLE,D2_WELLBEING,ASSESSES,Lifestyle and well-being,Dataset 2
+LIFESTYLE,D2_METADATA,RECORDS,Lifestyle measurement metadata,Dataset 2
+LIFESTYLE,D2_CANCER_LINKS,SUMMARIZES,Cancer associations,Dataset 2
+D2_SMOKING,D2_SMOKING_VALUE,HAS_REPORTED_VALUE,Reported evidence,Dataset 2
+D2_ALCOHOL,D2_ALCOHOL_VALUE,HAS_REPORTED_VALUE,Reported evidence,Dataset 2
+D2_RED_MEAT,D2_RED_MEAT_VALUE,HAS_REPORTED_VALUE,Recommended limit,Dataset 2
+D2_OBESITY,D2_OBESITY_ESOPHAGEAL,HAS_REPORTED_VALUE,Esophageal adenocarcinoma,Dataset 2
+D2_OBESITY,D2_OBESITY_ENDOMETRIAL,HAS_REPORTED_VALUE,Endometrial cancer,Dataset 2
+D2_OBESITY,D2_OBESITY_GALLBLADDER,HAS_REPORTED_VALUE,Gallbladder cancer,Dataset 2
+D2_ACTIVITY,D2_ACTIVITY_VALUE,HAS_REPORTED_VALUE,Colorectal risk,Dataset 2

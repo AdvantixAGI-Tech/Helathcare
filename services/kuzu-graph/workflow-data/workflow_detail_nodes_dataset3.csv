@@ -1,0 +1,28 @@
+id,name,category,description,color,shape
+D3_OVERVIEW,Cancer Staging Overview,Staging Detail,"Cancer staging describes the anatomical extent of disease using clinical and pathological information",#C6E0B4,box
+D3_CLINICAL_STAGE,Clinical TNM cTNM,Staging Method,"Clinical stage established before definitive treatment using clinical examination and diagnostic investigations",#C6E0B4,box
+D3_PATH_STAGE,Pathological TNM pTNM,Staging Method,"Pathological stage established using preoperative evidence plus surgical and histopathological findings",#C6E0B4,box
+D3_PHYSICAL,Physical Examination,Staging Evidence,"Physical examination findings used as clinical staging evidence",#E4DFEC,box
+D3_IMAGING,Diagnostic Imaging,Staging Evidence,"Imaging findings used to assess primary tumour regional nodes and distant disease",#E4DFEC,box
+D3_ENDOSCOPY,Endoscopy,Staging Evidence,"Endoscopic findings where applicable to the cancer type",#E4DFEC,box
+D3_BIOPSY_EVIDENCE,Biopsy Evidence,Staging Evidence,"Biopsy and cytology findings used in diagnosis and clinical staging",#F4CCCC,box
+D3_LAB_EVIDENCE,Laboratory Evidence,Staging Evidence,"Relevant laboratory and biomarker findings used with other staging evidence",#E4DFEC,box
+D3_T,T Primary Tumour,TNM Component,"T describes the size or direct extent of the primary tumour",#C6E0B4,box
+D3_TX,TX,T Category,"Primary tumour cannot be assessed",#C6E0B4,box
+D3_T0,T0,T Category,"No evidence of primary tumour",#C6E0B4,box
+D3_TIS,Tis Carcinoma In Situ,T Category,"Carcinoma in situ without invasion of surrounding tissues",#C6E0B4,box
+D3_T1_T4,T1 through T4,T Category,"Increasing tumour size or increasing local extent; exact definitions depend on cancer type",#C6E0B4,box
+D3_N,N Regional Lymph Nodes,TNM Component,"N describes involvement of regional lymph nodes",#C6E0B4,box
+D3_NX,NX,N Category,"Regional lymph nodes cannot be assessed",#C6E0B4,box
+D3_N0,N0,N Category,"No regional lymph-node metastasis",#C6E0B4,box
+D3_N1_N3,N1 through N3,N Category,"Increasing regional lymph-node involvement; exact definitions depend on cancer type",#C6E0B4,box
+D3_M,M Distant Metastasis,TNM Component,"M describes the presence or absence of distant metastasis",#C6E0B4,box
+D3_M0,M0,M Category,"No distant metastasis identified",#C6E0B4,box
+D3_M1,M1,M Category,"Distant metastasis is present",#F4B183,box
+D3_STAGE0_DESC,Stage 0 Description,Stage Description,"In situ disease; applicable only to cancer types that define a Stage 0 group",#FFD966,note
+D3_STAGE1_DESC,Stage I Description,Stage Description,"Usually localized early-stage invasive cancer; exact grouping is cancer-specific",#FFD966,note
+D3_STAGE2_DESC,Stage II Description,Stage Description,"Greater local extent or limited regional involvement according to cancer-specific grouping",#FFD966,note
+D3_STAGE3_DESC,Stage III Description,Stage Description,"Locally advanced or more extensive regional disease according to cancer-specific grouping",#FFD966,note
+D3_STAGE4_DESC,Stage IV Description,Stage Description,"Cancer with distant metastatic disease according to cancer-specific grouping",#F4B183,note
+D3_CAVEAT,Staging Interpretation Caution,Metadata,"TNM definitions and stage-group combinations vary by cancer type; not every cancer has Stage 0; stage is not the only determinant of prognosis or treatment",#E7E6E6,note
+D3_METADATA,Staging Metadata,Metadata,"Patient; cancer type; assessment date; clinical or pathological prefix; evidence source; T category; N category; M category and final stage group",#E7E6E6,note

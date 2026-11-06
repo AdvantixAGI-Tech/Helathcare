@@ -1,0 +1,23 @@
+id,name,category,description,color,shape
+D2_SMOKING,Smoking and Tobacco,Lifestyle Risk,"Smoking status; tobacco exposure; duration; frequency; cigarettes per day",#FFE699,box
+D2_SMOKING_VALUE,Smoking Reported Values,Reported Value,">80% of lung cancer cases attributed to smoking in the cited analysis; approximately 10–20-fold lung cancer risk",#E7E6E6,note
+D2_ALCOHOL,Alcohol Consumption,Lifestyle Risk,"Alcohol status; type; units per week; frequency; duration",#FFE699,box
+D2_ALCOHOL_VALUE,Alcohol Reported Values,Reported Value,"Approximately 4–5% of cancers attributable to alcohol; cited male attributable fractions approximately 25–50% for several cancers",#E7E6E6,note
+D2_DIET,Diet and Nutrition,Lifestyle Risk,"Dietary pattern; fruit; vegetables; fibre; whole grains; processed foods",#FFE699,box
+D2_RED_MEAT,Red and Processed Meat,Lifestyle Risk,"Red meat and processed meat consumption; servings and quantity per week",#FFE699,box
+D2_RED_MEAT_VALUE,Recommended Meat Limit,Reported Value,"Maximum 18 oz or approximately 510 g or 3–4 servings of red meat per week",#E7E6E6,note
+D2_INFLAMMATION,Chronic Inflammation,Lifestyle Mechanism,"Long-term inflammation and inflammatory dietary patterns may contribute to cancer-related biological pathways",#FFE699,box
+D2_ANTI_INFLAMMATORY,Anti-inflammatory Diet,Protective Factor,"Anti-inflammatory dietary pattern; fruits; vegetables; fibre; whole grains and healthy fats",#E2F0D9,box
+D2_DIET_PATTERNS,Healthy Dietary Patterns,Protective Factor,"Mediterranean; DASH; Nordic; plant-based and soy-associated dietary patterns",#E2F0D9,box
+D2_MICROBIOME,Gut Microbiome,Lifestyle Mechanism,"Diet-associated gut microbiome composition and metabolic activity",#FFE699,box
+D2_FOOD_PREPARATION,Food Preparation,Lifestyle Risk,"Cooking method; food processing; preservation and preparation practices",#FFE699,box
+D2_OBESITY,Obesity and Body Weight,Lifestyle Risk,"BMI; body weight; waist measurement; overweight or obesity status; weight history",#FFE699,box
+D2_OBESITY_ESOPHAGEAL,Esophageal Adenocarcinoma Value,Reported Value,"Obesity-attributable fraction reported as approximately 29% in men and 37% in women",#E7E6E6,note
+D2_OBESITY_ENDOMETRIAL,Endometrial Cancer Value,Reported Value,"Obesity-attributable fraction reported as approximately 36%",#E7E6E6,note
+D2_OBESITY_GALLBLADDER,Gallbladder Cancer Value,Reported Value,"Obesity-attributable fraction reported as approximately 11% in men and 42% in women",#E7E6E6,note
+D2_ACTIVITY,Physical Activity,Protective Factor,"Activity type; frequency; intensity; duration; minutes per week and sedentary behaviour",#E2F0D9,box
+D2_ACTIVITY_VALUE,Physical Activity Reported Values,Reported Value,"Up to approximately 50% lower colorectal cancer risk; one cited study reported 48% lower risk among men",#E7E6E6,note
+D2_UV,Ultraviolet Exposure,Lifestyle Risk,"Sun exposure; UV exposure; occupation; tanning exposure; duration and protection",#FFE699,box
+D2_WELLBEING,Lifestyle and Well-being,Protective Factor,"Sleep; stress; social well-being and general lifestyle-related health context",#E2F0D9,box
+D2_CANCER_LINKS,Cancer Associations,Cancer Association,"Lung; colorectal; breast; liver; oral; pharyngeal; laryngeal; oesophageal; endometrial and gallbladder cancers",#F4B183,box
+D2_METADATA,Lifestyle Measurement Metadata,Metadata,"Patient; assessment date; status; frequency; duration; quantity; value; unit; source and previous/current measurement",#E7E6E6,note

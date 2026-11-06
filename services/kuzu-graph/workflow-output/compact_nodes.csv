@@ -1,0 +1,125 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+INITIAL,Initial,Start,Workflow,Cancer workflow begins,,,All,1,#9DC3E6,circle
+PATIENT_PROFILE,Patient Profile,Process,Profile,Age gender demographics and observation metadata,,,Dataset 1,2,#DDEBF7,box
+LIFESTYLE,Lifestyle and Exposure Assessment,Process,Lifestyle,Smoking alcohol diet obesity physical activity and UV exposure,,,Dataset 2,3,#FFE699,box
+SYMPTOM_DECISION,Concerning Symptoms or Clinical Changes?,Decision,Clinical,Select screening or diagnostic path,,,Dataset 1,10,#FFE699,diamond
+SCREENING,Cancer-Specific Screening,Process,Clinical,Screening where applicable,,,Dataset 1,11,#DDEBF7,box
+DIAGNOSTIC_ENCOUNTER,Diagnostic Clinical Encounter,Process,Clinical,Clinical encounter for symptoms or findings,,,Dataset 1,12,#DDEBF7,box
+CLINICAL_ASSESSMENT,Clinical Assessment,Process,Clinical,Assessment of systemic surface and functional changes,,,Dataset 1,13,#DDEBF7,box
+SUSPICIOUS_DECISION,Suspicious Clinical Finding?,Decision,Clinical,Determine whether further investigation is required,,,Dataset 1,14,#FFE699,diamond
+ROUTINE_MONITORING,Routine Monitoring,Process,Follow-up,Monitoring when no suspicious finding is identified,,,Dataset 1,15,#E2F0D9,box
+DIAGNOSTIC_WORKUP,Diagnostic Work-up,Process,Investigation,Laboratory and imaging assessment,,,Dataset 1,20,#DDEBF7,box
+LAB_ASSESSMENT,Laboratory Assessment,Process,Laboratory,CBC CMP CRP and ESR measurements,,,Dataset 1,21,#E4DFEC,box
+IMAGING_ASSESSMENT,Imaging Assessment,Process,Imaging,Cancer-specific imaging where applicable,,,Dataset 1,22,#E4DFEC,box
+ABNORMALITY_DECISION,Suspicious Lesion or Abnormality?,Decision,Investigation,Review clinical imaging and laboratory findings,,,Dataset 1,23,#FFE699,diamond
+MONITOR_REASSESS,Monitor and Reassess,Process,Follow-up,Repeat assessment when appropriate,,,Dataset 1,24,#E2F0D9,box
+BIOPSY,Biopsy or Tissue Sampling,Process,Pathology,Tissue sampling where clinically applicable,,,Dataset 1,30,#F4CCCC,box
+PATHOLOGY,Biopsy Histopathology Assessment,Process,Pathology,Determine histology tumour classification microscopic features and whether malignancy is confirmed,,,Dataset 1,31,#F4CCCC,box
+MALIGNANCY_DECISION,Malignancy Confirmed?,Decision,Pathology,Pathology confirmation decision,,,Dataset 1,32,#FFE699,diamond
+NON_MALIGNANT_FOLLOWUP,Non-Malignant Follow-up,Process,Follow-up,Non-cancer follow-up or general care when malignancy is not confirmed,,,Dataset 1,33,#E2F0D9,box
+CANCER_CLASSIFICATION,Cancer Type Classification,Process,Cancer,Cancer-specific classification,,,Dataset 1,34,#F4B183,box
+BREAST_DECISION,Breast Cancer Pathway?,Decision,Cancer,Determine whether breast-specific receptor data apply,,,Dataset 1,35,#FFE699,diamond
+RECEPTOR_ASSESSMENT,HER2 ER and PR Assessment,Process,Biomarker,Breast-specific receptor assessment where applicable,,,Dataset 1,36,#F8CBAD,box
+TNM_ASSESSMENT,Clinical TNM Assessment (cTNM),Process,Staging,Pre-treatment clinical assessment of primary tumour regional nodes and distant metastasis using available clinical and diagnostic evidence,,,Dataset 3,40,#A9D18E,box
+T_ASSESSMENT,T - Primary Tumor Assessment,Process,Staging,Tumor size depth and local extension,,,Dataset 3,41,#C6E0B4,box
+N_ASSESSMENT,N - Regional Lymph-Node Extent,Process,Staging,Cancer-specific regional nodal extent based on location laterality size and/or number where applicable; not node count alone,,,Dataset 3,42,#C6E0B4,box
+M_ASSESSMENT,M - Distant Metastasis Assessment,Process,Staging,Presence or absence of distant spread,,,Dataset 3,43,#C6E0B4,box
+METASTASIS_DECISION,Distant Metastasis Identified?,Decision,Staging,M1 or M0 branch,,,Dataset 3,44,#FFE699,diamond
+INSITU_DECISION,In Situ Disease?,Decision,Staging,Tis where Stage 0 applies,,,Dataset 3,45,#FFE699,diamond
+STAGE_GROUP,Cancer-Specific Stage Group,Decision,Staging,Combine applicable T N and M categories,,,Dataset 3,46,#FFE699,diamond
+STAGE_0,Stage 0 - In Situ (Where Applicable),Stage,Staging,Carcinoma in situ without invasion; applicability and definition vary by cancer type,,,Dataset 3,50,#FFD966,box
+STAGE_1,Stage I - Cancer-Specific Early Invasive Disease,Stage,Staging,Often limited primary extent without distant metastasis; exact TNM and profile criteria vary by cancer type,,,Dataset 3,51,#FFD966,box
+STAGE_2,Stage II - Cancer-Specific Intermediate Extent,Stage,Staging,May reflect greater primary extent and/or limited regional nodal involvement without distant metastasis; exact criteria vary,,,Dataset 3,52,#FFD966,box
+STAGE_3,Stage III - Cancer-Specific Locally Advanced or Regional Disease,Stage,Staging,Often greater local extension and/or regional nodal involvement without distant metastasis; exact criteria vary,,,Dataset 3,53,#FFD966,box
+STAGE_4,Stage IV - Metastatic Disease,Stage,Staging,Distant or metastatic disease,,,Dataset 3,54,#FFD966,box
+FOLLOWUP,Follow-up and Surveillance,Process,Follow-up,Symptoms laboratory tests imaging lifestyle and well-being,,,All,60,#DDEBF7,box
+PROGRESSION_DECISION,Progression or New Finding?,Decision,Follow-up,A progression concern or new finding returns to clinical assessment and diagnostic confirmation before any restaging,,,All,61,#FFE699,diamond
+TERMINAL,Module End,End,Workflow,End of current workflow cycle,,,All,70,#9DC3E6,doublecircle
+HEREDITARY_RISK_ASSESSMENT,Family and Hereditary Risk Assessment,Process,Hereditary Risk,"Assess structured family history, hereditary susceptibility, prior genetic testing and polygenic risk without treating risk as diagnosis",,,Hereditary Risk,100,#DDEBF7,box
+FAMILY_HISTORY_DETAILS,Structured Family History,Clinical Detail,Hereditary Risk,Biological relationship; degree; maternal or paternal lineage; cancer type and subtype; age at diagnosis; multiple primary cancers; number affected; age and cause of death; prior genetic testing; known hereditary syndrome,,,Hereditary Risk,101,#DDEBF7,box
+HEREDITARY_EVAL_DECISION,Hereditary Evaluation Indicated?,Decision,Hereditary Risk,"Use the cancer pattern, young age at diagnosis, multiple primaries, affected relatives, phenotype and applicable guidance; familial clustering alone does not prove a syndrome",,,Hereditary Risk,102,#FFE699,diamond
+GENETIC_COUNSELLING,Genetic Counselling and Clinical Review,Process,Hereditary Risk,"Review informed testing, limitations, implications and appropriate cancer-specific interpretation before or with germline evaluation",,,Hereditary Risk,103,#DDEBF7,box
+GERMLINE_INTERPRETATION,Germline Test and Variant Interpretation,Process,Hereditary Risk,"Record test performed, gene, variant and clinical classification; a pathogenic germline variant increases susceptibility but does not establish current cancer",,,Hereditary Risk,104,#DDEBF7,box
+HEREDITARY_SYNDROMES,Hereditary Syndrome Context,Clinical Detail,Hereditary Risk,Hereditary breast and ovarian cancer; Lynch syndrome; familial adenomatous polyposis; Li-Fraumeni syndrome; other phenotype-appropriate tumour-predisposition syndromes,,,Hereditary Risk,105,#E7E6E6,note
+HEREDITARY_GENES,Hereditary Gene Context,Clinical Detail,Hereditary Risk,BRCA1; BRCA2; APC; MLH1; MSH2; MSH6; PMS2; TP53; PALB2; PTEN; and other phenotype-appropriate genes,,,Hereditary Risk,106,#E7E6E6,note
+PRS_ASSESSMENT,Polygenic Risk Score Assessment,Process,Hereditary Risk,"Multiple common variants combined using weighted genetic effects to estimate relative inherited susceptibility; complementary to, not interchangeable with, family history",,,Hereditary Risk,107,#DDEBF7,box
+PRS_LIMITATIONS,PRS Interpretation Caution,Caution,Hereditary Risk,"Performance may vary across populations and ancestry groups; require appropriate calibration, prospective validation and evidence of clinical benefit before individual clinical use",,,Hereditary Risk,108,#E7E6E6,note
+HEREDITARY_RISK_INTEGRATION,Integrated Hereditary Risk Context,Process,Hereditary Risk,"Integrate family pattern, germline findings when available and PRS when appropriate; preserve uncertainty and cancer-specific interpretation",,,Hereditary Risk,109,#DDEBF7,box
+INFECTION_HISTORY,Cancer-Associated Infection History,Lifestyle Detail,Baseline Risk,"Record relevant history of HPV, HBV, HCV, EBV, HTLV-1, Kaposi sarcoma-associated herpesvirus and HIV-related immunosuppression according to cancer and population context",,,Hereditary Risk,110,#FFE699,box
+MULTIFACTORIAL_RISK_CONTEXT,Multifactorial Risk Context,Clinical Detail,Baseline Risk,"Inherited variants, acquired alterations, epigenetic change, environmental carcinogens, chronic inflammation, infection, hormonal and metabolic influences can interact over time",,,Hereditary Risk,111,#E7E6E6,note
+INTEGRATED_BASELINE_RISK,Integrated Baseline Risk Context,Process,Baseline Risk,"Combine hereditary, lifestyle, environmental, infectious and demographic context as risk information—not evidence of current cancer",,,Hereditary Risk,112,#DDEBF7,box
+MEDICAL_SCREENING_HISTORY,Medical and Screening History,Process,Clinical History,Previous cancer; previous biopsy; previous pathology; previous abnormal imaging; previous screening; previous genetic testing; surgical history; chronic conditions; relevant medications and medical exposures,,,Hereditary Risk,113,#DDEBF7,box
+TEMPORAL_HISTORY_ASSESSMENT,Temporal Change Assessment,Process,Clinical History,"Determine whether findings are new, persistent, previously investigated, recurrent or changing before evaluating current symptoms",,,Hereditary Risk,114,#DDEBF7,box
+RISK_SUSPICION_DIAGNOSIS_CAUTION,Risk–Suspicion–Diagnosis Distinction,Caution,Baseline Risk,Risk factors indicate susceptibility; clinical findings may create suspicion; diagnosis requires appropriate clinical and diagnostic evidence and often histopathological confirmation for solid tumours,,,Hereditary Risk,115,#E7E6E6,note
+LONGITUDINAL_CONTEXT,Longitudinal Information Context,Caution,Clinical History,"Update family history, exposures, symptoms, laboratory trends, imaging, pathology and disease classification as information changes over time",,,Hereditary Risk,116,#E7E6E6,note
+CLINICAL_FINDINGS_CONVERGENCE,Integrated Clinical Findings,Process,Clinical,Converge general clinical assessment with cancer-specific clinical modules where applicable,,,Clinical,131,#DDEBF7,box
+LAB_RESULTS_CONVERGENCE,Integrated Laboratory Findings,Process,Laboratory,Converge CBC CMP CRP ESR and relevant trends into one laboratory interpretation,,,Clinical,221,#E4DFEC,box
+IMAGING_RESULTS_CONVERGENCE,Integrated Imaging Findings,Process,Imaging,Converge imaging method lesion characteristics and regional or distant spread findings,,,Clinical,222,#E4DFEC,box
+INTEGRATED_DIAGNOSTIC_FINDINGS,Integrated Diagnostic Findings,Process,Investigation,Combine clinical laboratory and imaging evidence before deciding whether an abnormality requires tissue diagnosis,,,Clinical,223,#DDEBF7,box
+CLINICAL_WEIGHT_LOSS,Weight Loss,Clinical Detail,Clinical Assessment,"Unintentional weight loss; amount, duration and progression",,,Clinical,331,#DDEBF7,box
+CLINICAL_PERSISTENT_PAIN,Persistent Pain,Clinical Detail,Clinical Assessment,"Persistent or unexplained pain; site, severity, duration and progression",,,Clinical,332,#DDEBF7,box
+CLINICAL_BLEEDING,Bleeding Assessment,Clinical Detail,Clinical Assessment,"Unexplained bleeding; site, frequency, duration and progression",,,Clinical,333,#DDEBF7,box
+BREAST_PROFILE_CONVERGENCE,Breast Biomarker Profile Integration,Process,Biomarker,Converge HER2 ER and PR results for breast-specific stage/profile interpretation and treatment planning,,,Clinical,371,#F8CBAD,box
+STAGING_SYSTEM_DECISION,Which Staging System Applies?,Decision,Staging,Select TNM or an applicable cancer-specific alternative based on cancer type and current classification guidance,,,Staging,390,#FFE699,diamond
+M1_STAGE4_APPLICABILITY,Does the Applicable System Map M1 to Stage IV?,Decision,Staging,Apply only the selected cancer-specific staging definition; do not assume a universal mapping,,,Staging,445,#FFE699,diamond
+CANCER_SPECIFIC_STAGE_RESULT,Other Cancer-Specific Stage Result,Process,Staging,Record the stage or extent defined by the applicable cancer-specific system when a direct M1 to Stage IV mapping is not appropriate,,,Staging,549,#C6E0B4,box
+STAGE_RESULT_CONVERGENCE,Applicable Cancer Stage Result,Process,Staging,Converge the result from TNM or the selected cancer-specific alternative staging system,,,Staging,550,#C6E0B4,box
+STAGE_PROFILE_INTEGRATION,Stage and Tumour Profile Integration,Process,Staging,Integrate applicable stage grade histology biomarkers and molecular or genetic profile without treating stage as individual prognosis,,,Staging,560,#C6E0B4,box
+D1_BIOPSY,Biopsy Details,Pathology,Dataset 1 - Clinical,Biopsy method; date; anatomical site; specimen,,,Dataset 1,1000,#F4CCCC,box
+D1_BREAST,Breast-Specific Clinical Signs (Where Applicable),Clinical Detail,Dataset 1 - Clinical,Cancer-specific module: lump or thickening; location; size; skin or shape change; nipple change; discharge; pain; duration; progression,,,Dataset 1,1000,#DDEBF7,box
+D1_CBC,CBC Assessment,Laboratory,Dataset 1 - Clinical,Hemoglobin; RBC; WBC; platelets; RBC-related indices; WBC differential,,,Dataset 1,1000,#E4DFEC,box
+D1_CMP,CMP Assessment,Laboratory,Dataset 1 - Clinical,ALP; AST; ALT; calcium; albumin; bilirubin; other metabolic measurements,,,Dataset 1,1000,#E4DFEC,box
+D1_ER,Estrogen Receptor,Biomarker,Dataset 1 - Clinical,ER staining result; positive percentage; final ER status,,,Dataset 1,1000,#F8CBAD,box
+D1_HER2,HER2 Assessment,Biomarker,Dataset 1 - Clinical,IHC result; FISH result; ERBB2 signal; ratio; final HER2 status,,,Dataset 1,1000,#F8CBAD,box
+D1_IMAGING_METHOD,Imaging Method,Imaging,Dataset 1 - Clinical,Mammography; CT; MRI; ultrasound or other applicable imaging,,,Dataset 1,1000,#E4DFEC,box
+D1_INFLAMMATION,Inflammation Assessment,Laboratory,Dataset 1 - Clinical,CRP and ESR; previous value; current value; date and trend,,,Dataset 1,1000,#E4DFEC,box
+D1_LESION,Lesion Characteristics,Imaging,Dataset 1 - Clinical,Presence; location; size; shape; margins; count,,,Dataset 1,1000,#E4DFEC,box
+D1_PR,Progesterone Receptor,Biomarker,Dataset 1 - Clinical,PR staining result; positive percentage; final PR status,,,Dataset 1,1000,#F8CBAD,box
+D1_SPREAD,Spread Assessment,Imaging,Dataset 1 - Clinical,Regional lymph-node findings and distant findings,,,Dataset 1,1000,#E4DFEC,box
+PRS_USE_DECISION,Validated PRS Appropriate and Available?,Decision,Hereditary Risk,"Use only when the score is relevant, appropriately calibrated and validated for the population and intended clinical context",,,Hereditary Risk,1065,#FFE699,diamond
+D2_ACTIVITY,Physical Activity,Protective Factor,Dataset 2 - Lifestyle,Frequency; duration; intensity; occupational and recreational activity; and sedentary time,,,Dataset 2,2000,#E2F0D9,box
+D2_ALCOHOL,Alcohol Consumption,Lifestyle Risk,Dataset 2 - Lifestyle,Alcohol type; quantity; frequency; duration; and current versus previous consumption,,,Dataset 2,2000,#FFE699,box
+D2_DIET,Diet and Nutrition,Lifestyle Risk,Dataset 2 - Lifestyle,Overall dietary pattern; fruit and vegetables; fibre; processed foods; red meat; and overall nutritional quality,,,Dataset 2,2000,#FFE699,box
+D2_OBESITY,Obesity and Body Weight,Lifestyle Risk,Dataset 2 - Lifestyle,BMI; body weight; waist measurement; overweight or obesity status; weight history,,,Dataset 2,2000,#FFE699,box
+D2_RED_MEAT,Red and Processed Meat,Lifestyle Risk,Dataset 2 - Lifestyle,Red meat and processed meat consumption; servings and quantity per week,,,Dataset 2,2000,#FFE699,box
+D2_SMOKING,Smoking and Tobacco,Lifestyle Risk,Dataset 2 - Lifestyle,Current and previous smoking; initiation age; duration; quantity; cessation; second-hand exposure; smokeless tobacco; cumulative exposure in pack-years (packs/day × years),,,Dataset 2,2000,#FFE699,box
+D2_UV,Ultraviolet Exposure,Lifestyle Risk,Dataset 2 - Lifestyle,Sun exposure; UV exposure; occupation; tanning exposure; duration and protection,,,Dataset 2,2000,#FFE699,box
+D3_CLINICAL_STAGE,Clinical TNM cTNM,Staging Method,Dataset 3 - TNM Staging,Clinical stage established before definitive treatment using clinical examination and diagnostic investigations,,,Dataset 3,3000,#C6E0B4,box
+D3_M0,M0,M Category,Dataset 3 - TNM Staging,No distant metastasis identified,,,Dataset 3,3000,#C6E0B4,box
+D3_M1,M1,M Category,Dataset 3 - TNM Staging,Distant metastasis is present,,,Dataset 3,3000,#F4B183,box
+D3_N0,N0,N Category,Dataset 3 - TNM Staging,No regional lymph-node metastasis,,,Dataset 3,3000,#C6E0B4,box
+D3_N1_N3,N1 through N3,N Category,Dataset 3 - TNM Staging,Increasing regional lymph-node involvement; exact definitions depend on cancer type,,,Dataset 3,3000,#C6E0B4,box
+D3_OVERVIEW,Cancer Staging Overview,Staging Detail,Dataset 3 - TNM Staging,Cancer staging describes the anatomical extent of disease using clinical and pathological information,,,Dataset 3,3000,#C6E0B4,box
+D3_PATH_STAGE,Pathological TNM pTNM,Staging Method,Dataset 3 - TNM Staging,Pathological TNM based on clinical information plus adequate surgical and histopathological findings; available only when applicable,,,Dataset 3,3000,#C6E0B4,box
+D3_T1_T4,T1 through T4,T Category,Dataset 3 - TNM Staging,Increasing tumour size or increasing local extent; exact definitions depend on cancer type,,,Dataset 3,3000,#C6E0B4,box
+D3_TIS,Tis Carcinoma In Situ,T Category,Dataset 3 - TNM Staging,Carcinoma in situ without invasion of surrounding tissues,,,Dataset 3,3000,#C6E0B4,box
+TNM_CONVERGENCE,TNM Category Integration,Process,Staging,Combine the assessed T N and M categories before cancer-specific stage grouping,,,Staging,4050,#C6E0B4,box
+LUNG_PROBABILITY_MODEL,Lung Cancer Risk Inputs,Process,Clinical,Use recorded gender smoking status and quit-smoking age when applicable,,,Clinical,5000,#DDEBF7,box
+LUNG_GENDER_DECISION,Gender for Lung Risk Model,Decision,Clinical,Select the sex-specific probability branch recorded in the source model,,,Clinical,5001,#FFE699,diamond
+LUNG_FEMALE_SMOKING,Female Smoking Status,Decision,Clinical,Current smoker former smoker or never smoker,,,Clinical,5002,#FFE699,diamond
+LUNG_MALE_SMOKING,Male Smoking Status,Decision,Clinical,Current smoker former smoker or never smoker,,,Clinical,5003,#FFE699,diamond
+LUNG_FEMALE_RISK_CALC,Female Lung Risk Calculation,Process,Clinical,Apply female smoking status and quit-smoking age when applicable,,,Clinical,5005,#DDEBF7,box
+LUNG_MALE_QUIT_AGE,Quit-Smoking Age - Male Branch,Clinical Detail,Clinical,Record cessation age for former smokers or mark it unavailable,,,Clinical,5006,#DDEBF7,box
+LUNG_MALE_RISK_CALC,Male Lung Risk Calculation,Process,Clinical,Apply male smoking status and quit-smoking age when applicable,,,Clinical,5007,#DDEBF7,box
+LUNG_FEMALE_VALUES,Female Probability Values,Reported Value,Clinical,Smoker 0.185 (18.5%); quit smoker 0.026 (2.6%); nonsmoker 0.004 (0.4%),,,Clinical,5010,#E7E6E6,note
+LUNG_RISK_ACTION_DECISION,Lung-Risk Result Action?,Decision,Clinical,Use the source-model result with applicable screening guidance and clinical judgement; no universal numerical cutoff is assumed,,,Clinical,5016,#FFE699,diamond
+LUNG_MALE_VALUES,Male Probability Values,Reported Value,Clinical,Smoker 0.244 (24.4%); quit smoker 0.055 (5.5%); nonsmoker value unavailable in source,,,Clinical,5020,#E7E6E6,note
+LUNG_QUIT_AGE,Quit-Smoking Age - Female Branch,Clinical Detail,Clinical,Record cessation age for former smokers or mark it unavailable,,,Clinical,5030,#DDEBF7,box
+CLINICAL_TNM_FIELDS,Recorded TNM Clinical Fields,Clinical Detail,Clinical,Primary tumour size/local extension; involved-node count; micro/macrometastasis; metastasis location,,,Clinical,5040,#DDEBF7,box
+ACTIVITY_ADDITIONAL_VALUE,Additional Activity Finding,Reported Value,Lifestyle,Initially inactive men increasing activity: about 13% lower reported risk,,,Lifestyle,5100,#E7E6E6,note
+UV_REPORTED_VALUE,UV Reported Value,Reported Value,Lifestyle,About 90% of skin cancers attributed to UV exposure in the cited source,,,Lifestyle,5110,#E7E6E6,note
+LARYNGEAL_REPORTED_VALUE,Laryngeal Smoking Value,Reported Value,Lifestyle,Smoking-attributable fraction exceeds 50% in the cited analysis,,,Lifestyle,5120,#E7E6E6,note
+COMBINED_LIFESTYLE_VALUE,Combined Lifestyle Impact,Reported Value,Lifestyle,About 18% of cancer cases and 16% of cancer deaths in one reviewed estimate,,,Lifestyle,5130,#E7E6E6,note
+ENVIRONMENTAL_EXPOSURES,Environmental Exposures,Lifestyle Detail,Lifestyle,Air pollution; occupational chemicals; industrial exposure; dust and fibres; radiation; ultraviolet exposure; workplace conditions; duration and intensity,,,Lifestyle,5140,#FFE699,box
+FOOD_EVIDENCE_CAUTION,Food Evidence and Cautions,Lifestyle Detail,Lifestyle,"High-temperature cooking; acrylamide uncertainty; glycemic load; very hot drinks; coffee; GM, irradiated food, microwave, supplements and detox claims",,,Lifestyle,5150,#FFE699,box
+LIFESTYLE_PATHWAYS,Lifestyle Biological Pathways,Lifestyle Detail,Lifestyle,DNA damage; acetaldehyde; oxidative stress; inflammation; hormonal/metabolic/immune and microbiome pathways; tobacco-alcohol and alcohol-hepatitis interactions,,,Lifestyle,5160,#FFE699,box
+LIFESTYLE_RISK_SUMMARY,Lifestyle Risk Summary,Process,Lifestyle,Combine assessed lifestyle and exposure factors to inform risk-aware screening and clinical review,,,Lifestyle,5180,#FFE699,box
+POST_TREATMENT_RESTAGING,Post-Treatment and Restaging,Staging Detail,TNM,yTNM after specified preoperative treatment; rTNM for recurrence; retain original diagnosis stage,,,Staging,5200,#C6E0B4,box
+STAGE_EXTENT_SYSTEMS,Stage Subdivisions and SEER Extent,Staging Detail,TNM,"IIA/IIB; IIIA/IIIB/IIIC; SEER In situ, Localized, Regional, Distant and Unknown",,,Staging,5210,#C6E0B4,box
+STAGING_INVESTIGATIONS,Staging Investigations,Staging Detail,TNM,Physical examination; CT; MRI; ultrasound; PET/PET-CT; endoscopy; biopsy and selected laboratory tests,,,Staging,5220,#E4DFEC,box
+ALTERNATIVE_STAGING,Alternative Staging Systems,Staging Detail,TNM,Lugano for selected lymphomas; FIGO for female reproductive cancers; conventional TNM may not apply to leukemia or many brain/CNS tumours,,,Staging,5230,#C6E0B4,box
+GRADE_PROFILE_PROGNOSIS,Grade Profile and Prognosis,Staging Detail,TNM,"Stage is anatomical extent; grade is differentiation; profile includes histology, biomarkers and molecular/genetic features; stage is not individual prognosis",,,Staging,5240,#C6E0B4,box
+STAGING_CAUTION,Cancer-Specific Staging Caution,Caution,TNM,Stage 0 and TNM groupings are cancer-specific; map M1 to Stage IV only where the applicable cancer-specific system defines it,,,Staging,5250,#E7E6E6,note
+TREATMENT_PLANNING,Multidisciplinary Treatment Planning,Process,Treatment,"Stage, profile/grade, patient factors and preferences guide surgery, radiation, chemotherapy, immunotherapy, targeted/hormone/systemic therapy and supportive or palliative care",,,All,5300,#F8CBAD,box
+SURGICAL_PATHOLOGY_DECISION,Surgical Specimen Available for Pathological Staging?,Decision,Pathology,pTNM is considered only when adequate surgical and pathological information is available,,,Clinical,5360,#FFE699,diamond
+SURGICAL_PATHOLOGY,Surgical Pathology Review,Process,Pathology,Review resection specimen primary tumour and regional nodes to support pathological TNM where applicable,,,Clinical,5361,#F4CCCC,box

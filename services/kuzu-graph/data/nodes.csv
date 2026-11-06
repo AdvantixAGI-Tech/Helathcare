@@ -1,0 +1,46 @@
+id,name,category,dataset
+D1,Clinical Dataset,Dataset,Dataset 1
+D2,Lifestyle and Well-being,Dataset,Dataset 2
+D3,Cancer Staging,Dataset,Dataset 3
+SYM_WEIGHT_LOSS,Unexplained Weight Loss,Symptom,Dataset 1
+SYM_FATIGUE,Persistent Fatigue,Symptom,Dataset 1
+SYM_FEVER,Fever,Symptom,Dataset 1
+SYM_PAIN,Persistent or Progressive Pain,Symptom,Dataset 1
+SYM_LUMP,New or Changing Lump,Symptom,Dataset 1
+SYM_BLEEDING,Unusual Bleeding,Symptom,Dataset 1
+SYM_COUGH,Persistent Cough,Symptom,Dataset 1
+LAB_CBC,Complete Blood Count,Clinical Test,Dataset 1
+LAB_CMP,Comprehensive Metabolic Panel,Clinical Test,Dataset 1
+LAB_CRP,C-Reactive Protein,Clinical Test,Dataset 1
+LAB_ESR,Erythrocyte Sedimentation Rate,Clinical Test,Dataset 1
+IMG,Imaging Assessment,Clinical Test,Dataset 1
+BIOPSY,Biopsy,Procedure,Dataset 1
+PATH,Pathology Assessment,Clinical Assessment,Dataset 1
+HER2,HER2 Status,Biomarker,Dataset 1
+ER,Estrogen Receptor Status,Biomarker,Dataset 1
+PR,Progesterone Receptor Status,Biomarker,Dataset 1
+SMOKING,Smoking,Lifestyle Factor,Dataset 2
+ALCOHOL,Alcohol Consumption,Lifestyle Factor,Dataset 2
+DIET,Dietary Pattern,Lifestyle Factor,Dataset 2
+RED_MEAT,Red and Processed Meat,Lifestyle Factor,Dataset 2
+OBESITY,Obesity,Lifestyle Factor,Dataset 2
+ACTIVITY,Physical Activity,Lifestyle Factor,Dataset 2
+UV,UV Radiation,Environmental Factor,Dataset 2
+INFLAMMATION,Chronic Inflammation,Biological Pathway,Dataset 2
+DNA_DAMAGE,DNA Damage and Mutation,Biological Pathway,Dataset 2
+METABOLISM,Metabolic and Hormonal Changes,Biological Pathway,Dataset 2
+LUNG_CA,Lung Cancer,Cancer,Dataset 2
+BREAST_CA,Breast Cancer,Cancer,Dataset 2
+COLORECTAL_CA,Colorectal Cancer,Cancer,Dataset 2
+LIVER_CA,Liver Cancer,Cancer,Dataset 2
+SKIN_CA,Skin Cancer,Cancer,Dataset 2
+ENDOMETRIAL_CA,Endometrial Cancer,Cancer,Dataset 2
+TNM,TNM Classification,Staging System,Dataset 3
+T_CAT,T Primary Tumor,Staging Component,Dataset 3
+N_CAT,N Regional Lymph Nodes,Staging Component,Dataset 3
+M_CAT,M Distant Metastasis,Staging Component,Dataset 3
+STAGE0,Stage 0 In Situ,Stage Group,Dataset 3
+STAGE1,Stage I Localized,Stage Group,Dataset 3
+STAGE2,Stage II More Locally Advanced,Stage Group,Dataset 3
+STAGE3,Stage III Regional Disease,Stage Group,Dataset 3
+STAGE4,Stage IV Metastatic Disease,Stage Group,Dataset 3

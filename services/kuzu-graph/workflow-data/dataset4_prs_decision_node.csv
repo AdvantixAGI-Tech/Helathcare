@@ -1,0 +1,2 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+PRS_USE_DECISION,Validated PRS Appropriate and Available?,Decision,Hereditary Risk,"Use only when the score is relevant, appropriately calibrated and validated for the population and intended clinical context",,,Hereditary Risk,1065,#FFE699,diamond

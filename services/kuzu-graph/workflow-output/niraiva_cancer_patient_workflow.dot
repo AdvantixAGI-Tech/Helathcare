@@ -1,0 +1,289 @@
+digraph NiraivaCancerPatientWorkflow {
+  graph [
+    label="Niraiva Cancer Patient Workflow",
+    labelloc="t",
+    fontsize=26,
+    fontname="Arial",
+    rankdir=TB,
+    splines=polyline,
+    nodesep=0.35,
+    ranksep=0.65,
+    pad=0.4,
+    bgcolor="white",
+    newrank=true
+  ];
+  node [
+    style="filled,rounded",
+    fontname="Arial",
+    fontsize=9,
+    color="#5B7C99",
+    penwidth=1.2,
+    margin="0.12,0.08"
+  ];
+  edge [
+    fontname="Arial",
+    fontsize=8,
+    color="#6B879D",
+    fontcolor="#3F4F5F",
+    arrowsize=0.7,
+    penwidth=1.1
+  ];
+  "INITIAL" [label="Initial\nCancer workflow begins", shape=circle, fillcolor="#9DC3E6", style="filled"];
+  "PATIENT_PROFILE" [label="Patient Profile\nAge gender demographics and observation\nmetadata", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "LIFESTYLE" [label="Lifestyle and Exposure Assessment\nSmoking alcohol diet obesity physical\nactivity and UV exposure", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "SYMPTOM_DECISION" [label="Concerning Symptoms or Clinical\nChanges?\nSelect screening or diagnostic path", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "SCREENING" [label="Cancer-Specific Screening\nScreening where applicable", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "DIAGNOSTIC_ENCOUNTER" [label="Diagnostic Clinical Encounter\nClinical encounter for symptoms or\nfindings", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "CLINICAL_ASSESSMENT" [label="Clinical Assessment\nAssessment of systemic surface and\nfunctional changes", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "SUSPICIOUS_DECISION" [label="Suspicious Clinical Finding?\nDetermine whether further investigation is\nrequired", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "ROUTINE_MONITORING" [label="Routine Monitoring\nMonitoring when no suspicious finding is\nidentified", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "DIAGNOSTIC_WORKUP" [label="Diagnostic Work-up\nLaboratory and imaging assessment", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "LAB_ASSESSMENT" [label="Laboratory Assessment\nCBC CMP CRP and ESR measurements", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "IMAGING_ASSESSMENT" [label="Imaging Assessment\nCancer-specific imaging where applicable", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "ABNORMALITY_DECISION" [label="Suspicious Lesion or Abnormality?\nReview clinical imaging and laboratory\nfindings", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "MONITOR_REASSESS" [label="Monitor and Reassess\nRepeat assessment when appropriate", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "BIOPSY" [label="Biopsy or Tissue Sampling\nTissue sampling where clinically\napplicable", shape=box, fillcolor="#F4CCCC", style="filled,rounded"];
+  "PATHOLOGY" [label="Pathology Assessment\nHistology tumor classification and\npathology observations", shape=box, fillcolor="#F4CCCC", style="filled,rounded"];
+  "MALIGNANCY_DECISION" [label="Malignancy Confirmed?\nPathology confirmation decision", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "NON_MALIGNANT_FOLLOWUP" [label="Non-Malignant Follow-up\nFollow-up when malignancy is not confirmed", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "CANCER_CLASSIFICATION" [label="Cancer Type Classification\nCancer-specific classification", shape=box, fillcolor="#F4B183", style="filled,rounded"];
+  "BREAST_DECISION" [label="Breast Cancer Pathway?\nDetermine whether breast-specific receptor\ndata apply", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "RECEPTOR_ASSESSMENT" [label="HER2 ER and PR Assessment\nBreast-specific receptor assessment where\napplicable", shape=box, fillcolor="#F8CBAD", style="filled,rounded"];
+  "TNM_ASSESSMENT" [label="TNM Assessment\nAssessment of primary tumor regional nodes\nand distant metastasis", shape=box, fillcolor="#A9D18E", style="filled,rounded"];
+  "T_ASSESSMENT" [label="T - Primary Tumor Assessment\nTumor size depth and local extension", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "N_ASSESSMENT" [label="N - Regional Lymph Node Assessment\nRegional lymph-node involvement", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "M_ASSESSMENT" [label="M - Distant Metastasis Assessment\nPresence or absence of distant spread", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "METASTASIS_DECISION" [label="Distant Metastasis Identified?\nM1 or M0 branch", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "INSITU_DECISION" [label="In Situ Disease?\nTis where Stage 0 applies", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "STAGE_GROUP" [label="Cancer-Specific Stage Group\nCombine applicable T N and M categories", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "STAGE_0" [label="Stage 0 - In Situ\nIn situ disease where applicable", shape=box, fillcolor="#FFD966", style="filled,rounded"];
+  "STAGE_1" [label="Stage I - Localized\nLocalized or early disease", shape=box, fillcolor="#FFD966", style="filled,rounded"];
+  "STAGE_2" [label="Stage II - More Locally Advanced\nGreater local disease extent", shape=box, fillcolor="#FFD966", style="filled,rounded"];
+  "STAGE_3" [label="Stage III - Regional Disease\nRegional or locally advanced disease", shape=box, fillcolor="#FFD966", style="filled,rounded"];
+  "STAGE_4" [label="Stage IV - Metastatic Disease\nDistant or metastatic disease", shape=box, fillcolor="#FFD966", style="filled,rounded"];
+  "FOLLOWUP" [label="Follow-up and Surveillance\nSymptoms laboratory tests imaging\nlifestyle and well-being", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "PROGRESSION_DECISION" [label="Progression or New Finding?\nDetermine whether reassessment is required", shape=diamond, fillcolor="#FFE699", style="filled"];
+  "TERMINAL" [label="Module End\nEnd of current workflow cycle", shape=doublecircle, fillcolor="#9DC3E6", style="filled"];
+  "D1_BIOPSY" [label="Biopsy Details\nBiopsy method; date; anatomical site;\nspecimen", shape=box, fillcolor="#F4CCCC", style="filled,rounded"];
+  "D1_BLEEDING" [label="Unusual Bleeding\nBlood in stool; blood in urine; coughing\nblood; unexpected vaginal bleeding", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_BREAST" [label="Breast Clinical Signs\nLump or thickening; location; size; skin\nor shape change; nipple change; discharge;\npain; duration; progression", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_CBC" [label="CBC Assessment\nHemoglobin; RBC; WBC; platelets;\nRBC-related indices; WBC differential", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_CMP" [label="CMP Assessment\nALP; AST; ALT; calcium; albumin;\nbilirubin; other metabolic measurements", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_DIGESTIVE" [label="Digestive Symptoms\nDifficulty or painful swallowing;\nindigestion; difficulty eating; bowel\nchanges", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_ER" [label="Estrogen Receptor\nER staining result; positive percentage;\nfinal ER status", shape=box, fillcolor="#F8CBAD", style="filled,rounded"];
+  "D1_HER2" [label="HER2 Assessment\nIHC result; FISH result; ERBB2 signal;\nratio; final HER2 status", shape=box, fillcolor="#F8CBAD", style="filled,rounded"];
+  "D1_HISTOLOGY" [label="Histopathology\nHistology; tumour classification;\nmicroscopic observations", shape=box, fillcolor="#F4CCCC", style="filled,rounded"];
+  "D1_IMAGING_METHOD" [label="Imaging Method\nMammography; CT; MRI; ultrasound or other\napplicable imaging", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_INFLAMMATION" [label="Inflammation Assessment\nCRP and ESR; previous value; current\nvalue; date and trend", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_LESION" [label="Lesion Characteristics\nPresence; location; size; shape; margins;\ncount", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_METADATA" [label="Clinical Measurement Metadata\nPatient; age; assessment date; source;\nvalue; unit; reference range; previous and\ncurrent values; duration; progression", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D1_PR" [label="Progesterone Receptor\nPR staining result; positive percentage;\nfinal PR status", shape=box, fillcolor="#F8CBAD", style="filled,rounded"];
+  "D1_RESPIRATORY" [label="Respiratory Symptoms\nPersistent cough; hoarseness", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_SPREAD" [label="Spread Assessment\nRegional lymph-node findings and distant\nfindings", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D1_SURFACE" [label="Surface and Skin Signs\nNew or changing lump; mole changes;\nnon-healing sore; skin changes; jaundice", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_SYSTEMIC" [label="Systemic Symptoms\nWeight loss; persistent fatigue; fever;\nnight sweats; persistent or progressive\npain", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D1_URINARY" [label="Urinary Symptoms\nUrinary changes", shape=box, fillcolor="#DDEBF7", style="filled,rounded"];
+  "D2_ACTIVITY" [label="Physical Activity\nActivity type; frequency; intensity;\nduration; minutes per week and sedentary\nbehaviour", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "D2_ACTIVITY_VALUE" [label="Physical Activity Reported Values\nUp to approximately 50% lower colorectal\ncancer risk; one cited study reported 48%\nlower risk among men", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_ALCOHOL" [label="Alcohol Consumption\nAlcohol status; type; units per week;\nfrequency; duration", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_ALCOHOL_VALUE" [label="Alcohol Reported Values\nApproximately 4–5% of cancers attributable\nto alcohol; cited male attributable\nfractions approximately 25–50% for several\ncancers", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_ANTI_INFLAMMATORY" [label="Anti-inflammatory Diet\nAnti-inflammatory dietary pattern; fruits;\nvegetables; fibre; whole grains and\nhealthy fats", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "D2_CANCER_LINKS" [label="Cancer Associations\nLung; colorectal; breast; liver; oral;\npharyngeal; laryngeal; oesophageal;\nendometrial and gallbladder cancers", shape=box, fillcolor="#F4B183", style="filled,rounded"];
+  "D2_DIET" [label="Diet and Nutrition\nDietary pattern; fruit; vegetables; fibre;\nwhole grains; processed foods", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_DIET_PATTERNS" [label="Healthy Dietary Patterns\nMediterranean; DASH; Nordic; plant-based\nand soy-associated dietary patterns", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "D2_FOOD_PREPARATION" [label="Food Preparation\nCooking method; food processing;\npreservation and preparation practices", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_INFLAMMATION" [label="Chronic Inflammation\nLong-term inflammation and inflammatory\ndietary patterns may contribute to\ncancer-related biological pathways", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_METADATA" [label="Lifestyle Measurement Metadata\nPatient; assessment date; status;\nfrequency; duration; quantity; value;\nunit; source and previous/current\nmeasurement", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_MICROBIOME" [label="Gut Microbiome\nDiet-associated gut microbiome composition\nand metabolic activity", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_OBESITY" [label="Obesity and Body Weight\nBMI; body weight; waist measurement;\noverweight or obesity status; weight\nhistory", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_OBESITY_ENDOMETRIAL" [label="Endometrial Cancer Value\nObesity-attributable fraction reported as\napproximately 36%", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_OBESITY_ESOPHAGEAL" [label="Esophageal Adenocarcinoma Value\nObesity-attributable fraction reported as\napproximately 29% in men and 37% in women", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_OBESITY_GALLBLADDER" [label="Gallbladder Cancer Value\nObesity-attributable fraction reported as\napproximately 11% in men and 42% in women", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_RED_MEAT" [label="Red and Processed Meat\nRed meat and processed meat consumption;\nservings and quantity per week", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_RED_MEAT_VALUE" [label="Recommended Meat Limit\nMaximum 18 oz or approximately 510 g or\n3–4 servings of red meat per week", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_SMOKING" [label="Smoking and Tobacco\nSmoking status; tobacco exposure;\nduration; frequency; cigarettes per day", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_SMOKING_VALUE" [label="Smoking Reported Values\n>80% of lung cancer cases attributed to\nsmoking in the cited analysis;\napproximately 10–20-fold lung cancer risk", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D2_UV" [label="Ultraviolet Exposure\nSun exposure; UV exposure; occupation;\ntanning exposure; duration and protection", shape=box, fillcolor="#FFE699", style="filled,rounded"];
+  "D2_WELLBEING" [label="Lifestyle and Well-being\nSleep; stress; social well-being and\ngeneral lifestyle-related health context", shape=box, fillcolor="#E2F0D9", style="filled,rounded"];
+  "D3_BIOPSY_EVIDENCE" [label="Biopsy Evidence\nBiopsy and cytology findings used in\ndiagnosis and clinical staging", shape=box, fillcolor="#F4CCCC", style="filled,rounded"];
+  "D3_CAVEAT" [label="Staging Interpretation Caution\nTNM definitions and stage-group\ncombinations vary by cancer type; not\nevery cancer has Stage 0; stage is not the\nonly determinant of prognosis or treatment", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D3_CLINICAL_STAGE" [label="Clinical TNM cTNM\nClinical stage established before\ndefinitive treatment using clinical\nexamination and diagnostic investigations", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_ENDOSCOPY" [label="Endoscopy\nEndoscopic findings where applicable to\nthe cancer type", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D3_IMAGING" [label="Diagnostic Imaging\nImaging findings used to assess primary\ntumour regional nodes and distant disease", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D3_LAB_EVIDENCE" [label="Laboratory Evidence\nRelevant laboratory and biomarker findings\nused with other staging evidence", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D3_M" [label="M Distant Metastasis\nM describes the presence or absence of\ndistant metastasis", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_M0" [label="M0\nNo distant metastasis identified", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_M1" [label="M1\nDistant metastasis is present", shape=box, fillcolor="#F4B183", style="filled,rounded"];
+  "D3_METADATA" [label="Staging Metadata\nPatient; cancer type; assessment date;\nclinical or pathological prefix; evidence\nsource; T category; N category; M category\nand final stage group", shape=note, fillcolor="#E7E6E6", style="filled"];
+  "D3_N" [label="N Regional Lymph Nodes\nN describes involvement of regional lymph\nnodes", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_N0" [label="N0\nNo regional lymph-node metastasis", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_N1_N3" [label="N1 through N3\nIncreasing regional lymph-node\ninvolvement; exact definitions depend on\ncancer type", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_NX" [label="NX\nRegional lymph nodes cannot be assessed", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_OVERVIEW" [label="Cancer Staging Overview\nCancer staging describes the anatomical\nextent of disease using clinical and\npathological information", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_PATH_STAGE" [label="Pathological TNM pTNM\nPathological stage established using\npreoperative evidence plus surgical and\nhistopathological findings", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_PHYSICAL" [label="Physical Examination\nPhysical examination findings used as\nclinical staging evidence", shape=box, fillcolor="#E4DFEC", style="filled,rounded"];
+  "D3_STAGE0_DESC" [label="Stage 0 Description\nIn situ disease; applicable only to cancer\ntypes that define a Stage 0 group", shape=note, fillcolor="#FFD966", style="filled"];
+  "D3_STAGE1_DESC" [label="Stage I Description\nUsually localized early-stage invasive\ncancer; exact grouping is cancer-specific", shape=note, fillcolor="#FFD966", style="filled"];
+  "D3_STAGE2_DESC" [label="Stage II Description\nGreater local extent or limited regional\ninvolvement according to cancer-specific\ngrouping", shape=note, fillcolor="#FFD966", style="filled"];
+  "D3_STAGE3_DESC" [label="Stage III Description\nLocally advanced or more extensive\nregional disease according to\ncancer-specific grouping", shape=note, fillcolor="#FFD966", style="filled"];
+  "D3_STAGE4_DESC" [label="Stage IV Description\nCancer with distant metastatic disease\naccording to cancer-specific grouping", shape=note, fillcolor="#F4B183", style="filled"];
+  "D3_T" [label="T Primary Tumour\nT describes the size or direct extent of\nthe primary tumour", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_T0" [label="T0\nNo evidence of primary tumour", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_T1_T4" [label="T1 through T4\nIncreasing tumour size or increasing local\nextent; exact definitions depend on cancer\ntype", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_TIS" [label="Tis Carcinoma In Situ\nCarcinoma in situ without invasion of\nsurrounding tissues", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "D3_TX" [label="TX\nPrimary tumour cannot be assessed", shape=box, fillcolor="#C6E0B4", style="filled,rounded"];
+  "INITIAL" -> "PATIENT_PROFILE" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "PATIENT_PROFILE" -> "LIFESTYLE" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "LIFESTYLE" -> "SYMPTOM_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "SYMPTOM_DECISION" -> "SCREENING" [label="No | No concerning symptoms", style=solid, color="#6B879D", penwidth=1.2];
+  "SYMPTOM_DECISION" -> "DIAGNOSTIC_ENCOUNTER" [label="Yes | Concerning symptoms\npresent", style=solid, color="#6B879D", penwidth=1.2];
+  "SCREENING" -> "SUSPICIOUS_DECISION" [label="Where applicable", style=solid, color="#6B879D", penwidth=1.2];
+  "DIAGNOSTIC_ENCOUNTER" -> "CLINICAL_ASSESSMENT" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "CLINICAL_ASSESSMENT" -> "SUSPICIOUS_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "SUSPICIOUS_DECISION" -> "ROUTINE_MONITORING" [label="No | No suspicious clinical\nfinding", style=solid, color="#6B879D", penwidth=1.2];
+  "SUSPICIOUS_DECISION" -> "DIAGNOSTIC_WORKUP" [label="Yes | Suspicious clinical\nfinding", style=solid, color="#6B879D", penwidth=1.2];
+  "ROUTINE_MONITORING" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "DIAGNOSTIC_WORKUP" -> "LAB_ASSESSMENT" [label="Laboratory branch", style=solid, color="#6B879D", penwidth=1.2];
+  "DIAGNOSTIC_WORKUP" -> "IMAGING_ASSESSMENT" [label="Imaging branch", style=solid, color="#6B879D", penwidth=1.2];
+  "LAB_ASSESSMENT" -> "ABNORMALITY_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "IMAGING_ASSESSMENT" -> "ABNORMALITY_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "ABNORMALITY_DECISION" -> "MONITOR_REASSESS" [label="No | No suspicious lesion or\nabnormality", style=solid, color="#6B879D", penwidth=1.2];
+  "MONITOR_REASSESS" -> "DIAGNOSTIC_WORKUP" [label="Repeat if indicated", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "ABNORMALITY_DECISION" -> "BIOPSY" [label="Yes | Suspicious lesion or\nabnormality", style=solid, color="#6B879D", penwidth=1.2];
+  "BIOPSY" -> "PATHOLOGY" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "PATHOLOGY" -> "MALIGNANCY_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "MALIGNANCY_DECISION" -> "NON_MALIGNANT_FOLLOWUP" [label="No | Malignancy not confirmed", style=solid, color="#6B879D", penwidth=1.2];
+  "NON_MALIGNANT_FOLLOWUP" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "MALIGNANCY_DECISION" -> "CANCER_CLASSIFICATION" [label="Yes | Malignancy confirmed", style=solid, color="#6B879D", penwidth=1.2];
+  "CANCER_CLASSIFICATION" -> "BREAST_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "BREAST_DECISION" -> "RECEPTOR_ASSESSMENT" [label="Yes | Breast-specific pathway", style=solid, color="#6B879D", penwidth=1.2];
+  "BREAST_DECISION" -> "TNM_ASSESSMENT" [label="No | Other cancer type", style=solid, color="#6B879D", penwidth=1.2];
+  "RECEPTOR_ASSESSMENT" -> "TNM_ASSESSMENT" [label="Continue", style=solid, color="#6B879D", penwidth=1.2];
+  "TNM_ASSESSMENT" -> "T_ASSESSMENT" [label="T", style=solid, color="#6B879D", penwidth=1.2];
+  "TNM_ASSESSMENT" -> "N_ASSESSMENT" [label="N", style=solid, color="#6B879D", penwidth=1.2];
+  "TNM_ASSESSMENT" -> "M_ASSESSMENT" [label="M", style=solid, color="#6B879D", penwidth=1.2];
+  "T_ASSESSMENT" -> "STAGE_GROUP" [label="T category", style=solid, color="#6B879D", penwidth=1.2];
+  "N_ASSESSMENT" -> "STAGE_GROUP" [label="N category", style=solid, color="#6B879D", penwidth=1.2];
+  "M_ASSESSMENT" -> "METASTASIS_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "METASTASIS_DECISION" -> "STAGE_4" [label="M1 | Distant metastasis\nidentified", style=solid, color="#6B879D", penwidth=1.2];
+  "METASTASIS_DECISION" -> "INSITU_DECISION" [label="M0 | No distant metastasis\nidentified", style=solid, color="#6B879D", penwidth=1.2];
+  "INSITU_DECISION" -> "STAGE_0" [label="Yes / Tis | In situ where\napplicable", style=solid, color="#6B879D", penwidth=1.2];
+  "INSITU_DECISION" -> "STAGE_GROUP" [label="No | Not classified as in situ", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_GROUP" -> "STAGE_1" [label="Stage I | Cancer-specific T N\nM combination", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_GROUP" -> "STAGE_2" [label="Stage II | Cancer-specific T N\nM combination", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_GROUP" -> "STAGE_3" [label="Stage III | Cancer-specific T\nN M combination", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_0" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_1" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_2" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_3" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "STAGE_4" -> "FOLLOWUP" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "FOLLOWUP" -> "PROGRESSION_DECISION" [label="FLOW", style=solid, color="#6B879D", penwidth=1.2];
+  "PROGRESSION_DECISION" -> "TNM_ASSESSMENT" [label="Yes | Progression or new\nfinding", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "PROGRESSION_DECISION" -> "TERMINAL" [label="No | No progression or new\nfinding", style=solid, color="#6B879D", penwidth=1.2];
+  "CLINICAL_ASSESSMENT" -> "D1_SYSTEMIC" [label="Systemic symptoms", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_SURFACE" [label="Skin and surface signs", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_BLEEDING" [label="Unusual bleeding", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_RESPIRATORY" [label="Respiratory symptoms", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_DIGESTIVE" [label="Digestive symptoms", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_URINARY" [label="Urinary symptoms", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "CLINICAL_ASSESSMENT" -> "D1_BREAST" [label="Breast clinical signs", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LAB_ASSESSMENT" -> "D1_CBC" [label="CBC", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LAB_ASSESSMENT" -> "D1_CMP" [label="CMP", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LAB_ASSESSMENT" -> "D1_INFLAMMATION" [label="CRP and ESR", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "IMAGING_ASSESSMENT" -> "D1_IMAGING_METHOD" [label="Imaging methods", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "IMAGING_ASSESSMENT" -> "D1_LESION" [label="Lesion characteristics", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "IMAGING_ASSESSMENT" -> "D1_SPREAD" [label="Regional and distant spread", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "BIOPSY" -> "D1_BIOPSY" [label="Biopsy details", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "PATHOLOGY" -> "D1_HISTOLOGY" [label="Histopathology", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "RECEPTOR_ASSESSMENT" -> "D1_HER2" [label="HER2", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "RECEPTOR_ASSESSMENT" -> "D1_ER" [label="ER", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "RECEPTOR_ASSESSMENT" -> "D1_PR" [label="PR", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "PATIENT_PROFILE" -> "D1_METADATA" [label="Clinical metadata", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_SMOKING" [label="Smoking and tobacco", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_ALCOHOL" [label="Alcohol consumption", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_DIET" [label="Diet and nutrition", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_RED_MEAT" [label="Red and processed meat", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_INFLAMMATION" [label="Chronic inflammation", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_ANTI_INFLAMMATORY" [label="Anti-inflammatory diet", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_DIET_PATTERNS" [label="Healthy dietary patterns", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_MICROBIOME" [label="Gut microbiome", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_FOOD_PREPARATION" [label="Food preparation", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_OBESITY" [label="Obesity and body weight", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_ACTIVITY" [label="Physical activity", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_UV" [label="Ultraviolet exposure", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_WELLBEING" [label="Lifestyle and well-being", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_METADATA" [label="Lifestyle measurement metadata", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "LIFESTYLE" -> "D2_CANCER_LINKS" [label="Cancer associations", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_SMOKING" -> "D2_SMOKING_VALUE" [label="Reported evidence", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_ALCOHOL" -> "D2_ALCOHOL_VALUE" [label="Reported evidence", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_RED_MEAT" -> "D2_RED_MEAT_VALUE" [label="Recommended limit", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_OBESITY" -> "D2_OBESITY_ESOPHAGEAL" [label="Esophageal adenocarcinoma", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_OBESITY" -> "D2_OBESITY_ENDOMETRIAL" [label="Endometrial cancer", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_OBESITY" -> "D2_OBESITY_GALLBLADDER" [label="Gallbladder cancer", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D2_ACTIVITY" -> "D2_ACTIVITY_VALUE" [label="Colorectal risk", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "TNM_ASSESSMENT" -> "D3_OVERVIEW" [label="Staging overview", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "TNM_ASSESSMENT" -> "D3_CLINICAL_STAGE" [label="cTNM", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "TNM_ASSESSMENT" -> "D3_PATH_STAGE" [label="pTNM", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "TNM_ASSESSMENT" -> "D3_METADATA" [label="Staging metadata", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "TNM_ASSESSMENT" -> "D3_CAVEAT" [label="Cancer-specific interpretation", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_CLINICAL_STAGE" -> "D3_PHYSICAL" [label="Physical examination", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_CLINICAL_STAGE" -> "D3_IMAGING" [label="Diagnostic imaging", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_CLINICAL_STAGE" -> "D3_ENDOSCOPY" [label="Endoscopy", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_CLINICAL_STAGE" -> "D3_BIOPSY_EVIDENCE" [label="Biopsy or cytology", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_CLINICAL_STAGE" -> "D3_LAB_EVIDENCE" [label="Laboratory evidence", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "PATHOLOGY" -> "D3_PATH_STAGE" [label="pTNM", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_PATH_STAGE" -> "D3_BIOPSY_EVIDENCE" [label="Histopathological evidence", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "T_ASSESSMENT" -> "D3_T" [label="Primary tumour", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_T" -> "D3_TX" [label="TX", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_T" -> "D3_T0" [label="T0", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_T" -> "D3_TIS" [label="Tis", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_T" -> "D3_T1_T4" [label="T1–T4", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "N_ASSESSMENT" -> "D3_N" [label="Regional lymph nodes", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_N" -> "D3_NX" [label="NX", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_N" -> "D3_N0" [label="N0", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_N" -> "D3_N1_N3" [label="N1–N3", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "M_ASSESSMENT" -> "D3_M" [label="Distant metastasis", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_M" -> "D3_M0" [label="M0", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_M" -> "D3_M1" [label="M1", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "METASTASIS_DECISION" -> "D3_M0" [label="No distant metastasis", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "METASTASIS_DECISION" -> "D3_M1" [label="Distant metastasis present", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_M1" -> "STAGE_4" [label="Stage IV", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "INSITU_DECISION" -> "D3_TIS" [label="Carcinoma in situ", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "D3_TIS" -> "STAGE_0" [label="Stage 0 when applicable", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "STAGE_0" -> "D3_STAGE0_DESC" [label="Stage 0 meaning", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "STAGE_1" -> "D3_STAGE1_DESC" [label="Stage I meaning", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "STAGE_2" -> "D3_STAGE2_DESC" [label="Stage II meaning", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "STAGE_3" -> "D3_STAGE3_DESC" [label="Stage III meaning", style=dashed, color="#9AA7B2", penwidth=0.9];
+  "STAGE_4" -> "D3_STAGE4_DESC" [label="Stage IV meaning", style=dashed, color="#9AA7B2", penwidth=0.9];
+  subgraph cluster_color_legend {
+    label="Color Description";
+    labelloc="t";
+    fontsize=14;
+    fontname="Arial Bold";
+    color="#B7C9D6";
+    style="rounded";
+    margin=14;
+    rank=sink;
+    "COLOR_LEGEND" [
+      shape=plain,
+      label=<
+        <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7">
+          <TR><TD BGCOLOR="#DDEBF7"><B>Blue</B></TD><TD ALIGN="LEFT">Patient and clinical workflow</TD></TR>
+          <TR><TD BGCOLOR="#9DC3E6"><B>Dark Blue</B></TD><TD ALIGN="LEFT">Initial, terminal and major states</TD></TR>
+          <TR><TD BGCOLOR="#FFE699"><B>Yellow</B></TD><TD ALIGN="LEFT">Decision and lifestyle-risk assessment</TD></TR>
+          <TR><TD BGCOLOR="#E4DFEC"><B>Purple</B></TD><TD ALIGN="LEFT">Laboratory and imaging assessment</TD></TR>
+          <TR><TD BGCOLOR="#F4CCCC"><B>Pink</B></TD><TD ALIGN="LEFT">Biopsy and pathology</TD></TR>
+          <TR><TD BGCOLOR="#F8CBAD"><B>Peach</B></TD><TD ALIGN="LEFT">Cancer biomarkers and receptors</TD></TR>
+          <TR><TD BGCOLOR="#E2F0D9"><B>Light Green</B></TD><TD ALIGN="LEFT">Monitoring, follow-up and protective factors</TD></TR>
+          <TR><TD BGCOLOR="#C6E0B4"><B>Green</B></TD><TD ALIGN="LEFT">TNM components and staging information</TD></TR>
+          <TR><TD BGCOLOR="#FFD966"><B>Gold</B></TD><TD ALIGN="LEFT">Cancer stage groups</TD></TR>
+          <TR><TD BGCOLOR="#F4B183"><B>Orange</B></TD><TD ALIGN="LEFT">Advanced cancer and distant metastasis</TD></TR>
+          <TR><TD BGCOLOR="#E7E6E6"><B>Grey</B></TD><TD ALIGN="LEFT">Reported values, metadata and caution notes</TD></TR>
+          <TR><TD><B>Solid arrow</B></TD><TD ALIGN="LEFT">Main patient workflow or decision branch</TD></TR>
+          <TR><TD><B>Dashed arrow</B></TD><TD ALIGN="LEFT">Supporting PDF detail or evidence</TD></TR>
+        </TABLE>
+      >
+    ];
+  }
+  "TERMINAL" -> "COLOR_LEGEND" [style=invis];
+}
