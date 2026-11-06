@@ -1,0 +1,4 @@
+source_id,target_id,relationship,branch_label,condition,evidence,line_style,sort_order
+HEREDITARY_RISK_ASSESSMENT,PRS_USE_DECISION,DECIDES,Assess PRS suitability,,,solid,1065
+PRS_USE_DECISION,PRS_ASSESSMENT,BRANCH,Yes - validated and appropriate,"Relevant score available with suitable validation and calibration",,solid,1066
+PRS_USE_DECISION,HEREDITARY_RISK_INTEGRATION,BRANCH,No - do not use PRS,"Unavailable, unvalidated or inappropriate for this context",,solid,1067

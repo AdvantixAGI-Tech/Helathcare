@@ -1,0 +1,48 @@
+source_id,source_name,source_category,relationship,evidence,target_id,target_name,target_category
+D1,Clinical Dataset,Dataset,CONTAINS,Whole-body sign,SYM_WEIGHT_LOSS,Unexplained Weight Loss,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Whole-body sign,SYM_FATIGUE,Persistent Fatigue,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Whole-body sign,SYM_FEVER,Fever,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Whole-body sign,SYM_PAIN,Persistent or Progressive Pain,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Surface-level change,SYM_LUMP,New or Changing Lump,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Internal or functional change,SYM_BLEEDING,Unusual Bleeding,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Internal or functional change,SYM_COUGH,Persistent Cough,Symptom
+D1,Clinical Dataset,Dataset,CONTAINS,Clinical laboratory variable,LAB_CBC,Complete Blood Count,Clinical Test
+D1,Clinical Dataset,Dataset,CONTAINS,Clinical laboratory variable,LAB_CMP,Comprehensive Metabolic Panel,Clinical Test
+D1,Clinical Dataset,Dataset,CONTAINS,Inflammatory measurement,LAB_CRP,C-Reactive Protein,Clinical Test
+D1,Clinical Dataset,Dataset,CONTAINS,Inflammatory measurement,LAB_ESR,Erythrocyte Sedimentation Rate,Clinical Test
+D1,Clinical Dataset,Dataset,CONTAINS,Imaging variable,IMG,Imaging Assessment,Clinical Test
+D1,Clinical Dataset,Dataset,CONTAINS,Pathology procedure,BIOPSY,Biopsy,Procedure
+BIOPSY,Biopsy,Procedure,PROVIDES,Tissue examination,PATH,Pathology Assessment,Clinical Assessment
+PATH,Pathology Assessment,Clinical Assessment,MAY_INCLUDE,Cancer-specific biomarker,HER2,HER2 Status,Biomarker
+PATH,Pathology Assessment,Clinical Assessment,MAY_INCLUDE,Cancer-specific biomarker,ER,Estrogen Receptor Status,Biomarker
+PATH,Pathology Assessment,Clinical Assessment,MAY_INCLUDE,Cancer-specific biomarker,PR,Progesterone Receptor Status,Biomarker
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,SMOKING,Smoking,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,ALCOHOL,Alcohol Consumption,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,DIET,Dietary Pattern,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,RED_MEAT,Red and Processed Meat,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,OBESITY,Obesity,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Lifestyle factor,ACTIVITY,Physical Activity,Lifestyle Factor
+D2,Lifestyle and Well-being,Dataset,CONTAINS,Environmental exposure,UV,UV Radiation,Environmental Factor
+ALCOHOL,Alcohol Consumption,Lifestyle Factor,INFLUENCES_THROUGH,Inflammation and oxidative stress,INFLAMMATION,Chronic Inflammation,Biological Pathway
+DIET,Dietary Pattern,Lifestyle Factor,INFLUENCES_THROUGH,Dietary inflammatory pathway,INFLAMMATION,Chronic Inflammation,Biological Pathway
+SMOKING,Smoking,Lifestyle Factor,INFLUENCES_THROUGH,Carcinogens can damage DNA,DNA_DAMAGE,DNA Damage and Mutation,Biological Pathway
+UV,UV Radiation,Environmental Factor,INFLUENCES_THROUGH,UV-related DNA damage,DNA_DAMAGE,DNA Damage and Mutation,Biological Pathway
+OBESITY,Obesity,Lifestyle Factor,INFLUENCES_THROUGH,Metabolic and hormonal changes,METABOLISM,Metabolic and Hormonal Changes,Biological Pathway
+SMOKING,Smoking,Lifestyle Factor,INCREASES_RISK_OF,Strong established association,LUNG_CA,Lung Cancer,Cancer
+ALCOHOL,Alcohol Consumption,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,BREAST_CA,Breast Cancer,Cancer
+OBESITY,Obesity,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,BREAST_CA,Breast Cancer,Cancer
+RED_MEAT,Red and Processed Meat,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,COLORECTAL_CA,Colorectal Cancer,Cancer
+OBESITY,Obesity,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,COLORECTAL_CA,Colorectal Cancer,Cancer
+ACTIVITY,Physical Activity,Lifestyle Factor,MAY_LOWER_RISK_OF,Observed research association,COLORECTAL_CA,Colorectal Cancer,Cancer
+ALCOHOL,Alcohol Consumption,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,LIVER_CA,Liver Cancer,Cancer
+UV,UV Radiation,Environmental Factor,INCREASES_RISK_OF,Major environmental risk,SKIN_CA,Skin Cancer,Cancer
+OBESITY,Obesity,Lifestyle Factor,ASSOCIATED_WITH,Documented cancer association,ENDOMETRIAL_CA,Endometrial Cancer,Cancer
+D3,Cancer Staging,Dataset,CONTAINS,Staging classification system,TNM,TNM Classification,Staging System
+TNM,TNM Classification,Staging System,HAS_COMPONENT,Primary tumor,T_CAT,T Primary Tumor,Staging Component
+TNM,TNM Classification,Staging System,HAS_COMPONENT,Regional lymph nodes,N_CAT,N Regional Lymph Nodes,Staging Component
+TNM,TNM Classification,Staging System,HAS_COMPONENT,Distant metastasis,M_CAT,M Distant Metastasis,Staging Component
+TNM,TNM Classification,Staging System,CONTRIBUTES_TO_STAGE_GROUP,Where applicable,STAGE0,Stage 0 In Situ,Stage Group
+TNM,TNM Classification,Staging System,CONTRIBUTES_TO_STAGE_GROUP,Localized disease,STAGE1,Stage I Localized,Stage Group
+TNM,TNM Classification,Staging System,CONTRIBUTES_TO_STAGE_GROUP,More locally advanced disease,STAGE2,Stage II More Locally Advanced,Stage Group
+TNM,TNM Classification,Staging System,CONTRIBUTES_TO_STAGE_GROUP,Regional or locally advanced disease,STAGE3,Stage III Regional Disease,Stage Group
+TNM,TNM Classification,Staging System,CONTRIBUTES_TO_STAGE_GROUP,Distant metastatic disease,STAGE4,Stage IV Metastatic Disease,Stage Group

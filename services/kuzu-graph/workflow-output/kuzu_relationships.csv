@@ -1,0 +1,124 @@
+source_id,target_id,relationship,branch_label,condition,evidence,line_style,sort_order
+INITIAL,PATIENT_PROFILE,FLOW,,,Workflow,solid,1
+PATIENT_PROFILE,LIFESTYLE,FLOW,,,Datasets 1 and 2,solid,2
+LIFESTYLE,SYMPTOM_DECISION,FLOW,,,Dataset 2,solid,3
+SYMPTOM_DECISION,SCREENING,BRANCH,No,No concerning symptoms,Conceptual workflow,solid,10
+SYMPTOM_DECISION,DIAGNOSTIC_ENCOUNTER,BRANCH,Yes,Concerning symptoms present,Dataset 1,solid,11
+SCREENING,SUSPICIOUS_DECISION,FLOW,Where applicable,,Conceptual workflow,solid,12
+DIAGNOSTIC_ENCOUNTER,CLINICAL_ASSESSMENT,FLOW,,,Dataset 1,solid,13
+CLINICAL_ASSESSMENT,SUSPICIOUS_DECISION,FLOW,,,Dataset 1,solid,14
+SUSPICIOUS_DECISION,ROUTINE_MONITORING,BRANCH,No,No suspicious clinical finding,Conceptual workflow,solid,15
+SUSPICIOUS_DECISION,DIAGNOSTIC_WORKUP,BRANCH,Yes,Suspicious clinical finding,Dataset 1,solid,16
+ROUTINE_MONITORING,FOLLOWUP,FLOW,,,Dataset 1,solid,17
+DIAGNOSTIC_WORKUP,LAB_ASSESSMENT,HAS_COMPONENT,Laboratory branch,,Dataset 1,solid,20
+DIAGNOSTIC_WORKUP,IMAGING_ASSESSMENT,HAS_COMPONENT,Imaging branch,,Dataset 1,solid,21
+LAB_ASSESSMENT,ABNORMALITY_DECISION,FLOW,,,Dataset 1,solid,22
+IMAGING_ASSESSMENT,ABNORMALITY_DECISION,FLOW,,,Dataset 1,solid,23
+ABNORMALITY_DECISION,MONITOR_REASSESS,BRANCH,No,No suspicious lesion or abnormality,Conceptual workflow,solid,24
+MONITOR_REASSESS,DIAGNOSTIC_WORKUP,REASSESS,Repeat if indicated,,Conceptual workflow,dashed,25
+ABNORMALITY_DECISION,BIOPSY,BRANCH,Yes,Suspicious lesion or abnormality,Dataset 1,solid,26
+BIOPSY,PATHOLOGY,FLOW,,,Dataset 1,solid,30
+PATHOLOGY,MALIGNANCY_DECISION,FLOW,,,Dataset 1,solid,31
+MALIGNANCY_DECISION,NON_MALIGNANT_FOLLOWUP,BRANCH,No,Malignancy not confirmed,Conceptual workflow,solid,32
+NON_MALIGNANT_FOLLOWUP,FOLLOWUP,FLOW,,,Conceptual workflow,solid,33
+MALIGNANCY_DECISION,CANCER_CLASSIFICATION,BRANCH,Yes,Malignancy confirmed,Dataset 1,solid,34
+CANCER_CLASSIFICATION,BREAST_DECISION,FLOW,,,Dataset 1,solid,35
+BREAST_DECISION,RECEPTOR_ASSESSMENT,BRANCH,Yes,Breast-specific pathway,Dataset 1,solid,36
+BREAST_DECISION,TNM_ASSESSMENT,BRANCH,No,Other cancer type,Dataset 3,solid,37
+RECEPTOR_ASSESSMENT,TNM_ASSESSMENT,FLOW,Continue,,Datasets 1 and 3,solid,38
+TNM_ASSESSMENT,T_ASSESSMENT,HAS_COMPONENT,T,,Dataset 3,solid,40
+TNM_ASSESSMENT,N_ASSESSMENT,HAS_COMPONENT,N,,Dataset 3,solid,41
+TNM_ASSESSMENT,M_ASSESSMENT,HAS_COMPONENT,M,,Dataset 3,solid,42
+T_ASSESSMENT,STAGE_GROUP,CONTRIBUTES_TO,T category,,Dataset 3,solid,43
+N_ASSESSMENT,STAGE_GROUP,CONTRIBUTES_TO,N category,,Dataset 3,solid,44
+M_ASSESSMENT,METASTASIS_DECISION,FLOW,,,Dataset 3,solid,45
+METASTASIS_DECISION,STAGE_4,BRANCH,M1,Distant metastasis identified,Dataset 3,solid,46
+METASTASIS_DECISION,INSITU_DECISION,BRANCH,M0,No distant metastasis identified,Dataset 3,solid,47
+INSITU_DECISION,STAGE_0,BRANCH,Yes / Tis,In situ where applicable,Dataset 3,solid,48
+INSITU_DECISION,STAGE_GROUP,BRANCH,No,Not classified as in situ,Dataset 3,solid,49
+STAGE_GROUP,STAGE_1,BRANCH,Stage I,Cancer-specific T N M combination,Dataset 3,solid,50
+STAGE_GROUP,STAGE_2,BRANCH,Stage II,Cancer-specific T N M combination,Dataset 3,solid,51
+STAGE_GROUP,STAGE_3,BRANCH,Stage III,Cancer-specific T N M combination,Dataset 3,solid,52
+STAGE_0,FOLLOWUP,FLOW,,,Dataset 3,solid,53
+STAGE_1,FOLLOWUP,FLOW,,,Dataset 3,solid,54
+STAGE_2,FOLLOWUP,FLOW,,,Dataset 3,solid,55
+STAGE_3,FOLLOWUP,FLOW,,,Dataset 3,solid,56
+STAGE_4,FOLLOWUP,FLOW,,,Dataset 3,solid,57
+FOLLOWUP,PROGRESSION_DECISION,FLOW,,,Datasets 1 and 3,solid,60
+PROGRESSION_DECISION,TNM_ASSESSMENT,REASSESS,Yes,Progression or new finding,Conceptual workflow,dashed,61
+PROGRESSION_DECISION,TERMINAL,BRANCH,No,No progression or new finding,Conceptual workflow,solid,62
+CLINICAL_ASSESSMENT,D1_SYSTEMIC,ASSESSES,Systemic symptoms,,Dataset 1,dashed,1000
+CLINICAL_ASSESSMENT,D1_SURFACE,ASSESSES,Skin and surface signs,,Dataset 1,dashed,1001
+CLINICAL_ASSESSMENT,D1_BLEEDING,ASSESSES,Unusual bleeding,,Dataset 1,dashed,1002
+CLINICAL_ASSESSMENT,D1_RESPIRATORY,ASSESSES,Respiratory symptoms,,Dataset 1,dashed,1003
+CLINICAL_ASSESSMENT,D1_DIGESTIVE,ASSESSES,Digestive symptoms,,Dataset 1,dashed,1004
+CLINICAL_ASSESSMENT,D1_URINARY,ASSESSES,Urinary symptoms,,Dataset 1,dashed,1005
+CLINICAL_ASSESSMENT,D1_BREAST,ASSESSES,Breast clinical signs,,Dataset 1,dashed,1006
+LAB_ASSESSMENT,D1_CBC,INCLUDES,CBC,,Dataset 1,dashed,1007
+LAB_ASSESSMENT,D1_CMP,INCLUDES,CMP,,Dataset 1,dashed,1008
+LAB_ASSESSMENT,D1_INFLAMMATION,INCLUDES,CRP and ESR,,Dataset 1,dashed,1009
+IMAGING_ASSESSMENT,D1_IMAGING_METHOD,INCLUDES,Imaging methods,,Dataset 1,dashed,1010
+IMAGING_ASSESSMENT,D1_LESION,EVALUATES,Lesion characteristics,,Dataset 1,dashed,1011
+IMAGING_ASSESSMENT,D1_SPREAD,EVALUATES,Regional and distant spread,,Dataset 1,dashed,1012
+BIOPSY,D1_BIOPSY,RECORDS,Biopsy details,,Dataset 1,dashed,1013
+PATHOLOGY,D1_HISTOLOGY,DETERMINES,Histopathology,,Dataset 1,dashed,1014
+RECEPTOR_ASSESSMENT,D1_HER2,TESTS,HER2,,Dataset 1,dashed,1015
+RECEPTOR_ASSESSMENT,D1_ER,TESTS,ER,,Dataset 1,dashed,1016
+RECEPTOR_ASSESSMENT,D1_PR,TESTS,PR,,Dataset 1,dashed,1017
+PATIENT_PROFILE,D1_METADATA,RECORDS,Clinical metadata,,Dataset 1,dashed,1018
+LIFESTYLE,D2_SMOKING,ASSESSES,Smoking and tobacco,,Dataset 2,dashed,2000
+LIFESTYLE,D2_ALCOHOL,ASSESSES,Alcohol consumption,,Dataset 2,dashed,2001
+LIFESTYLE,D2_DIET,ASSESSES,Diet and nutrition,,Dataset 2,dashed,2002
+LIFESTYLE,D2_RED_MEAT,ASSESSES,Red and processed meat,,Dataset 2,dashed,2003
+LIFESTYLE,D2_INFLAMMATION,ASSESSES,Chronic inflammation,,Dataset 2,dashed,2004
+LIFESTYLE,D2_ANTI_INFLAMMATORY,ASSESSES,Anti-inflammatory diet,,Dataset 2,dashed,2005
+LIFESTYLE,D2_DIET_PATTERNS,ASSESSES,Healthy dietary patterns,,Dataset 2,dashed,2006
+LIFESTYLE,D2_MICROBIOME,ASSESSES,Gut microbiome,,Dataset 2,dashed,2007
+LIFESTYLE,D2_FOOD_PREPARATION,ASSESSES,Food preparation,,Dataset 2,dashed,2008
+LIFESTYLE,D2_OBESITY,ASSESSES,Obesity and body weight,,Dataset 2,dashed,2009
+LIFESTYLE,D2_ACTIVITY,ASSESSES,Physical activity,,Dataset 2,dashed,2010
+LIFESTYLE,D2_UV,ASSESSES,Ultraviolet exposure,,Dataset 2,dashed,2011
+LIFESTYLE,D2_WELLBEING,ASSESSES,Lifestyle and well-being,,Dataset 2,dashed,2012
+LIFESTYLE,D2_METADATA,RECORDS,Lifestyle measurement metadata,,Dataset 2,dashed,2013
+LIFESTYLE,D2_CANCER_LINKS,SUMMARIZES,Cancer associations,,Dataset 2,dashed,2014
+D2_SMOKING,D2_SMOKING_VALUE,HAS_REPORTED_VALUE,Reported evidence,,Dataset 2,dashed,2015
+D2_ALCOHOL,D2_ALCOHOL_VALUE,HAS_REPORTED_VALUE,Reported evidence,,Dataset 2,dashed,2016
+D2_RED_MEAT,D2_RED_MEAT_VALUE,HAS_REPORTED_VALUE,Recommended limit,,Dataset 2,dashed,2017
+D2_OBESITY,D2_OBESITY_ESOPHAGEAL,HAS_REPORTED_VALUE,Esophageal adenocarcinoma,,Dataset 2,dashed,2018
+D2_OBESITY,D2_OBESITY_ENDOMETRIAL,HAS_REPORTED_VALUE,Endometrial cancer,,Dataset 2,dashed,2019
+D2_OBESITY,D2_OBESITY_GALLBLADDER,HAS_REPORTED_VALUE,Gallbladder cancer,,Dataset 2,dashed,2020
+D2_ACTIVITY,D2_ACTIVITY_VALUE,HAS_REPORTED_VALUE,Colorectal risk,,Dataset 2,dashed,2021
+TNM_ASSESSMENT,D3_OVERVIEW,INCLUDES,Staging overview,,Dataset 3,dashed,3000
+TNM_ASSESSMENT,D3_CLINICAL_STAGE,HAS_METHOD,cTNM,,Dataset 3,dashed,3001
+TNM_ASSESSMENT,D3_PATH_STAGE,HAS_METHOD,pTNM,,Dataset 3,dashed,3002
+TNM_ASSESSMENT,D3_METADATA,RECORDS,Staging metadata,,Dataset 3,dashed,3003
+TNM_ASSESSMENT,D3_CAVEAT,HAS_CAUTION,Cancer-specific interpretation,,Dataset 3,dashed,3004
+D3_CLINICAL_STAGE,D3_PHYSICAL,USES_EVIDENCE,Physical examination,,Dataset 3,dashed,3005
+D3_CLINICAL_STAGE,D3_IMAGING,USES_EVIDENCE,Diagnostic imaging,,Dataset 3,dashed,3006
+D3_CLINICAL_STAGE,D3_ENDOSCOPY,USES_EVIDENCE,Endoscopy,,Dataset 3,dashed,3007
+D3_CLINICAL_STAGE,D3_BIOPSY_EVIDENCE,USES_EVIDENCE,Biopsy or cytology,,Dataset 3,dashed,3008
+D3_CLINICAL_STAGE,D3_LAB_EVIDENCE,USES_EVIDENCE,Laboratory evidence,,Dataset 3,dashed,3009
+PATHOLOGY,D3_PATH_STAGE,SUPPORTS,pTNM,,Dataset 3,dashed,3010
+D3_PATH_STAGE,D3_BIOPSY_EVIDENCE,USES_EVIDENCE,Histopathological evidence,,Dataset 3,dashed,3011
+T_ASSESSMENT,D3_T,ASSESSES,Primary tumour,,Dataset 3,dashed,3012
+D3_T,D3_TX,HAS_CATEGORY,TX,,Dataset 3,dashed,3013
+D3_T,D3_T0,HAS_CATEGORY,T0,,Dataset 3,dashed,3014
+D3_T,D3_TIS,HAS_CATEGORY,Tis,,Dataset 3,dashed,3015
+D3_T,D3_T1_T4,HAS_CATEGORY,T1–T4,,Dataset 3,dashed,3016
+N_ASSESSMENT,D3_N,ASSESSES,Regional lymph nodes,,Dataset 3,dashed,3017
+D3_N,D3_NX,HAS_CATEGORY,NX,,Dataset 3,dashed,3018
+D3_N,D3_N0,HAS_CATEGORY,N0,,Dataset 3,dashed,3019
+D3_N,D3_N1_N3,HAS_CATEGORY,N1–N3,,Dataset 3,dashed,3020
+M_ASSESSMENT,D3_M,ASSESSES,Distant metastasis,,Dataset 3,dashed,3021
+D3_M,D3_M0,HAS_CATEGORY,M0,,Dataset 3,dashed,3022
+D3_M,D3_M1,HAS_CATEGORY,M1,,Dataset 3,dashed,3023
+METASTASIS_DECISION,D3_M0,EVALUATES,No distant metastasis,,Dataset 3,dashed,3024
+METASTASIS_DECISION,D3_M1,EVALUATES,Distant metastasis present,,Dataset 3,dashed,3025
+D3_M1,STAGE_4,MAPS_TO,Stage IV,,Dataset 3,dashed,3026
+INSITU_DECISION,D3_TIS,EVALUATES,Carcinoma in situ,,Dataset 3,dashed,3027
+D3_TIS,STAGE_0,MAPS_TO,Stage 0 when applicable,,Dataset 3,dashed,3028
+STAGE_0,D3_STAGE0_DESC,HAS_DESCRIPTION,Stage 0 meaning,,Dataset 3,dashed,3029
+STAGE_1,D3_STAGE1_DESC,HAS_DESCRIPTION,Stage I meaning,,Dataset 3,dashed,3030
+STAGE_2,D3_STAGE2_DESC,HAS_DESCRIPTION,Stage II meaning,,Dataset 3,dashed,3031
+STAGE_3,D3_STAGE3_DESC,HAS_DESCRIPTION,Stage III meaning,,Dataset 3,dashed,3032
+STAGE_4,D3_STAGE4_DESC,HAS_DESCRIPTION,Stage IV meaning,,Dataset 3,dashed,3033

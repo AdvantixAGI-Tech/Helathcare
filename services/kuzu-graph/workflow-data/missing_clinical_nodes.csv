@@ -1,0 +1,4 @@
+id,name,node_type,section,description,value_text,unit,dataset,sort_order,color,shape
+CLINICAL_WEIGHT_LOSS,Weight Loss,Clinical Detail,Clinical Assessment,"Unintentional weight loss; amount, duration and progression",,,Clinical,331,#DDEBF7,box
+CLINICAL_PERSISTENT_PAIN,Persistent Pain,Clinical Detail,Clinical Assessment,"Persistent or unexplained pain; site, severity, duration and progression",,,Clinical,332,#DDEBF7,box
+CLINICAL_BLEEDING,Bleeding Assessment,Clinical Detail,Clinical Assessment,"Unexplained bleeding; site, frequency, duration and progression",,,Clinical,333,#DDEBF7,box

@@ -1,0 +1,48 @@
+FROM,TO,relationship,evidence
+D1,SYM_WEIGHT_LOSS,CONTAINS,Whole-body sign
+D1,SYM_FATIGUE,CONTAINS,Whole-body sign
+D1,SYM_FEVER,CONTAINS,Whole-body sign
+D1,SYM_PAIN,CONTAINS,Whole-body sign
+D1,SYM_LUMP,CONTAINS,Surface-level change
+D1,SYM_BLEEDING,CONTAINS,Internal or functional change
+D1,SYM_COUGH,CONTAINS,Internal or functional change
+D1,LAB_CBC,CONTAINS,Clinical laboratory variable
+D1,LAB_CMP,CONTAINS,Clinical laboratory variable
+D1,LAB_CRP,CONTAINS,Inflammatory measurement
+D1,LAB_ESR,CONTAINS,Inflammatory measurement
+D1,IMG,CONTAINS,Imaging variable
+D1,BIOPSY,CONTAINS,Pathology procedure
+BIOPSY,PATH,PROVIDES,Tissue examination
+PATH,HER2,MAY_INCLUDE,Cancer-specific biomarker
+PATH,ER,MAY_INCLUDE,Cancer-specific biomarker
+PATH,PR,MAY_INCLUDE,Cancer-specific biomarker
+D2,SMOKING,CONTAINS,Lifestyle factor
+D2,ALCOHOL,CONTAINS,Lifestyle factor
+D2,DIET,CONTAINS,Lifestyle factor
+D2,RED_MEAT,CONTAINS,Lifestyle factor
+D2,OBESITY,CONTAINS,Lifestyle factor
+D2,ACTIVITY,CONTAINS,Lifestyle factor
+D2,UV,CONTAINS,Environmental exposure
+SMOKING,DNA_DAMAGE,INFLUENCES_THROUGH,Carcinogens can damage DNA
+SMOKING,LUNG_CA,INCREASES_RISK_OF,Strong established association
+ALCOHOL,INFLAMMATION,INFLUENCES_THROUGH,Inflammation and oxidative stress
+ALCOHOL,LIVER_CA,ASSOCIATED_WITH,Documented cancer association
+ALCOHOL,BREAST_CA,ASSOCIATED_WITH,Documented cancer association
+DIET,INFLAMMATION,INFLUENCES_THROUGH,Dietary inflammatory pathway
+RED_MEAT,COLORECTAL_CA,ASSOCIATED_WITH,Documented cancer association
+OBESITY,METABOLISM,INFLUENCES_THROUGH,Metabolic and hormonal changes
+OBESITY,BREAST_CA,ASSOCIATED_WITH,Documented cancer association
+OBESITY,COLORECTAL_CA,ASSOCIATED_WITH,Documented cancer association
+OBESITY,ENDOMETRIAL_CA,ASSOCIATED_WITH,Documented cancer association
+ACTIVITY,COLORECTAL_CA,MAY_LOWER_RISK_OF,Observed research association
+UV,DNA_DAMAGE,INFLUENCES_THROUGH,UV-related DNA damage
+UV,SKIN_CA,INCREASES_RISK_OF,Major environmental risk
+D3,TNM,CONTAINS,Staging classification system
+TNM,T_CAT,HAS_COMPONENT,Primary tumor
+TNM,N_CAT,HAS_COMPONENT,Regional lymph nodes
+TNM,M_CAT,HAS_COMPONENT,Distant metastasis
+TNM,STAGE0,CONTRIBUTES_TO_STAGE_GROUP,Where applicable
+TNM,STAGE1,CONTRIBUTES_TO_STAGE_GROUP,Localized disease
+TNM,STAGE2,CONTRIBUTES_TO_STAGE_GROUP,More locally advanced disease
+TNM,STAGE3,CONTRIBUTES_TO_STAGE_GROUP,Regional or locally advanced disease
+TNM,STAGE4,CONTRIBUTES_TO_STAGE_GROUP,Distant metastatic disease

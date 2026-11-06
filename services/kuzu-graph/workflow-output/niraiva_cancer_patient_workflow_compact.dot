@@ -1,0 +1,363 @@
+digraph NiraivaCancerPatientWorkflow {
+  graph [
+    label="Niraiva Cancer Patient Workflow",
+    labelloc="t",
+    fontsize=26,
+    fontname="Arial",
+    rankdir=TB,
+    splines=ortho,
+    concentrate=false,
+    forcelabels=true,
+    nodesep=0.65,
+    ranksep=1.20,
+    pad=0.4,
+    bgcolor="white",
+    outputorder="edgesfirst",
+    newrank=true
+  ];
+  node [
+    style="filled,rounded",
+    fontname="Arial",
+    fontsize=9,
+    color="#5B7C99",
+    penwidth=1.2,
+    margin="0.12,0.08"
+  ];
+  edge [
+    fontname="Arial",
+    fontsize=8,
+    color="#6B879D",
+    fontcolor="#3F4F5F",
+    arrowsize=0.9,
+    penwidth=1.3,
+    headclip=true,
+    tailclip=true
+  ];
+  "INITIAL" [label="Initial\nCancer workflow begins", shape=circle, fillcolor="#9DC3E6", color="#5B7C99", penwidth=1.2, style="filled"];
+  "PATIENT_PROFILE" [label="Patient Profile\nAge gender demographics and observation\nmetadata", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LIFESTYLE" [label="Lifestyle and Exposure Assessment\nSmoking alcohol diet obesity physical\nactivity and UV exposure", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "SYMPTOM_DECISION" [label="Concerning Symptoms or Clinical\nChanges?\nSelect screening or diagnostic path", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "SCREENING" [label="Cancer-Specific Screening\nScreening where applicable", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "DIAGNOSTIC_ENCOUNTER" [label="Diagnostic Clinical Encounter\nClinical encounter for symptoms or\nfindings", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "CLINICAL_ASSESSMENT" [label="Clinical Assessment\nAssessment of systemic surface and\nfunctional changes", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "SUSPICIOUS_DECISION" [label="Suspicious Clinical Finding?\nDetermine whether further investigation is\nrequired", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "ROUTINE_MONITORING" [label="Routine Monitoring\nMonitoring when no suspicious finding is\nidentified", shape=box, fillcolor="#E2F0D9", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "DIAGNOSTIC_WORKUP" [label="Diagnostic Work-up\nLaboratory and imaging assessment", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LAB_ASSESSMENT" [label="Laboratory Assessment\nCBC CMP CRP and ESR measurements", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "IMAGING_ASSESSMENT" [label="Imaging Assessment\nCancer-specific imaging where applicable", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "ABNORMALITY_DECISION" [label="Suspicious Lesion or Abnormality?\nReview clinical imaging and laboratory\nfindings", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "MONITOR_REASSESS" [label="Monitor and Reassess\nRepeat assessment when appropriate", shape=box, fillcolor="#E2F0D9", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "BIOPSY" [label="Biopsy or Tissue Sampling\nTissue sampling where clinically\napplicable", shape=box, fillcolor="#F4CCCC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "PATHOLOGY" [label="Biopsy Histopathology Assessment\nDetermine histology tumour classification\nmicroscopic features and whether\nmalignancy is confirmed", shape=box, fillcolor="#F4CCCC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "MALIGNANCY_DECISION" [label="Malignancy Confirmed?\nPathology confirmation decision", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "NON_MALIGNANT_FOLLOWUP" [label="Non-Malignant Follow-up\nNon-cancer follow-up or general care when\nmalignancy is not confirmed", shape=box, fillcolor="#E2F0D9", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "CANCER_CLASSIFICATION" [label="Cancer Type Classification\nCancer-specific classification", shape=box, fillcolor="#F4B183", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "BREAST_DECISION" [label="Breast Cancer Pathway?\nDetermine whether breast-specific receptor\ndata apply", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "RECEPTOR_ASSESSMENT" [label="HER2 ER and PR Assessment\nBreast-specific receptor assessment where\napplicable", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "TNM_ASSESSMENT" [label="Clinical TNM Assessment (cTNM)\nPre-treatment clinical assessment of\nprimary tumour regional nodes and distant\nmetastasis using available clinical and\ndiagnostic evidence", shape=box, fillcolor="#A9D18E", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "T_ASSESSMENT" [label="T - Primary Tumor Assessment\nTumor size depth and local extension", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "N_ASSESSMENT" [label="N - Regional Lymph-Node Extent\nCancer-specific regional nodal extent\nbased on location laterality size and/or\nnumber where applicable; not node count\nalone", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "M_ASSESSMENT" [label="M - Distant Metastasis Assessment\nPresence or absence of distant spread", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "METASTASIS_DECISION" [label="Distant Metastasis Identified?\nM1 or M0 branch", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "INSITU_DECISION" [label="In Situ Disease?\nTis where Stage 0 applies", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "STAGE_GROUP" [label="Cancer-Specific Stage Group\nCombine applicable T N and M categories", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "STAGE_0" [label="Stage 0 - In Situ (Where\nApplicable)\nCarcinoma in situ without invasion;\napplicability and definition vary by\ncancer type", shape=box, fillcolor="#FFD966", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_1" [label="Stage I - Cancer-Specific Early\nInvasive Disease\nOften limited primary extent without\ndistant metastasis; exact TNM and profile\ncriteria vary by cancer type", shape=box, fillcolor="#FFD966", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_2" [label="Stage II - Cancer-Specific\nIntermediate Extent\nMay reflect greater primary extent and/or\nlimited regional nodal involvement without\ndistant metastasis; exact criteria vary", shape=box, fillcolor="#FFD966", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_3" [label="Stage III - Cancer-Specific\nLocally Advanced or Regional\nDisease\nOften greater local extension and/or\nregional nodal involvement without distant\nmetastasis; exact criteria vary", shape=box, fillcolor="#FFD966", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_4" [label="Stage IV - Metastatic Disease\nDistant or metastatic disease", shape=box, fillcolor="#FFD966", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "FOLLOWUP" [label="Follow-up and Surveillance\nSymptoms laboratory tests imaging\nlifestyle and well-being", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "PROGRESSION_DECISION" [label="Progression or New Finding?\nA progression concern or new finding\nreturns to clinical assessment and\ndiagnostic confirmation before any\nrestaging", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "TERMINAL" [label="Module End\nEnd of current workflow cycle", shape=doublecircle, fillcolor="#9DC3E6", color="#5B7C99", penwidth=1.2, style="filled"];
+  "HEREDITARY_RISK_ASSESSMENT" [label="Family and Hereditary Risk\nAssessment\nAssess structured family history,\nhereditary susceptibility, prior genetic\ntesting and polygenic risk without\ntreating risk as diagnosis", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "FAMILY_HISTORY_DETAILS" [label="Structured Family History\nBiological relationship; degree; maternal\nor paternal lineage; cancer type and\nsubtype; age at diagnosis; multiple\nprimary cancers; number affected; age and\ncause of death; prior genetic testing;\nknown hereditary syndrome", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "HEREDITARY_EVAL_DECISION" [label="Hereditary Evaluation Indicated?\nUse the cancer pattern, young age at\ndiagnosis, multiple primaries, affected\nrelatives, phenotype and applicable\nguidance; familial clustering alone does\nnot prove a syndrome", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "GENETIC_COUNSELLING" [label="Genetic Counselling and Clinical\nReview\nReview informed testing, limitations,\nimplications and appropriate\ncancer-specific interpretation before or\nwith germline evaluation", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "GERMLINE_INTERPRETATION" [label="Germline Test and Variant\nInterpretation\nRecord test performed, gene, variant and\nclinical classification; a pathogenic\ngermline variant increases susceptibility\nbut does not establish current cancer", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "HEREDITARY_SYNDROMES" [label="Hereditary Syndrome Context\nHereditary breast and ovarian cancer;\nLynch syndrome; familial adenomatous\npolyposis; Li-Fraumeni syndrome; other\nphenotype-appropriate\ntumour-predisposition syndromes", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "HEREDITARY_GENES" [label="Hereditary Gene Context\nBRCA1; BRCA2; APC; MLH1; MSH2; MSH6; PMS2;\nTP53; PALB2; PTEN; and other\nphenotype-appropriate genes", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "PRS_ASSESSMENT" [label="Polygenic Risk Score Assessment\nMultiple common variants combined using\nweighted genetic effects to estimate\nrelative inherited susceptibility;\ncomplementary to, not interchangeable\nwith, family history", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "PRS_LIMITATIONS" [label="PRS Interpretation Caution\nPerformance may vary across populations\nand ancestry groups; require appropriate\ncalibration, prospective validation and\nevidence of clinical benefit before\nindividual clinical use", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "HEREDITARY_RISK_INTEGRATION" [label="Integrated Hereditary Risk Context\nIntegrate family pattern, germline\nfindings when available and PRS when\nappropriate; preserve uncertainty and\ncancer-specific interpretation", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "INFECTION_HISTORY" [label="Cancer-Associated Infection\nHistory\nRecord relevant history of HPV, HBV, HCV,\nEBV, HTLV-1, Kaposi sarcoma-associated\nherpesvirus and HIV-related\nimmunosuppression according to cancer and\npopulation context", shape=box, fillcolor="#FFE699", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "MULTIFACTORIAL_RISK_CONTEXT" [label="Multifactorial Risk Context\nInherited variants, acquired alterations,\nepigenetic change, environmental\ncarcinogens, chronic inflammation,\ninfection, hormonal and metabolic\ninfluences can interact over time", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "INTEGRATED_BASELINE_RISK" [label="Integrated Baseline Risk Context\nCombine hereditary, lifestyle,\nenvironmental, infectious and demographic\ncontext as risk information—not evidence\nof current cancer", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "MEDICAL_SCREENING_HISTORY" [label="Medical and Screening History\nPrevious cancer; previous biopsy; previous\npathology; previous abnormal imaging;\nprevious screening; previous genetic\ntesting; surgical history; chronic\nconditions; relevant medications and\nmedical exposures", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "TEMPORAL_HISTORY_ASSESSMENT" [label="Temporal Change Assessment\nDetermine whether findings are new,\npersistent, previously investigated,\nrecurrent or changing before evaluating\ncurrent symptoms", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "RISK_SUSPICION_DIAGNOSIS_CAUTION" [label="Risk–Suspicion–Diagnosis\nDistinction\nRisk factors indicate susceptibility;\nclinical findings may create suspicion;\ndiagnosis requires appropriate clinical\nand diagnostic evidence and often\nhistopathological confirmation for solid\ntumours", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "LONGITUDINAL_CONTEXT" [label="Longitudinal Information Context\nUpdate family history, exposures,\nsymptoms, laboratory trends, imaging,\npathology and disease classification as\ninformation changes over time", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "CLINICAL_FINDINGS_CONVERGENCE" [label="Integrated Clinical Findings\nConverge general clinical assessment with\ncancer-specific clinical modules where\napplicable", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LAB_RESULTS_CONVERGENCE" [label="Integrated Laboratory Findings\nConverge CBC CMP CRP ESR and relevant\ntrends into one laboratory interpretation", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "IMAGING_RESULTS_CONVERGENCE" [label="Integrated Imaging Findings\nConverge imaging method lesion\ncharacteristics and regional or distant\nspread findings", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "INTEGRATED_DIAGNOSTIC_FINDINGS" [label="Integrated Diagnostic Findings\nCombine clinical laboratory and imaging\nevidence before deciding whether an\nabnormality requires tissue diagnosis", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "CLINICAL_WEIGHT_LOSS" [label="Weight Loss\nUnintentional weight loss; amount,\nduration and progression", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "CLINICAL_PERSISTENT_PAIN" [label="Persistent Pain\nPersistent or unexplained pain; site,\nseverity, duration and progression", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "CLINICAL_BLEEDING" [label="Bleeding Assessment\nUnexplained bleeding; site, frequency,\nduration and progression", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "BREAST_PROFILE_CONVERGENCE" [label="Breast Biomarker Profile\nIntegration\nConverge HER2 ER and PR results for\nbreast-specific stage/profile\ninterpretation and treatment planning", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGING_SYSTEM_DECISION" [label="Which Staging System Applies?\nSelect TNM or an applicable\ncancer-specific alternative based on\ncancer type and current classification\nguidance", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "M1_STAGE4_APPLICABILITY" [label="Does the Applicable System Map M1\nto Stage IV?\nApply only the selected cancer-specific\nstaging definition; do not assume a\nuniversal mapping", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "CANCER_SPECIFIC_STAGE_RESULT" [label="Other Cancer-Specific Stage Result\nRecord the stage or extent defined by the\napplicable cancer-specific system when a\ndirect M1 to Stage IV mapping is not\nappropriate", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_RESULT_CONVERGENCE" [label="Applicable Cancer Stage Result\nConverge the result from TNM or the\nselected cancer-specific alternative\nstaging system", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "STAGE_PROFILE_INTEGRATION" [label="Stage and Tumour Profile\nIntegration\nIntegrate applicable stage grade histology\nbiomarkers and molecular or genetic\nprofile without treating stage as\nindividual prognosis", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_BIOPSY" [label="Biopsy Details\nBiopsy method; date; anatomical site;\nspecimen", shape=box, fillcolor="#F4CCCC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_BREAST" [label="Breast-Specific Clinical Signs\n(Where Applicable)\nCancer-specific module: lump or\nthickening; location; size; skin or shape\nchange; nipple change; discharge; pain;\nduration; progression", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "D1_CBC" [label="CBC Assessment\nHemoglobin; RBC; WBC; platelets;\nRBC-related indices; WBC differential", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_CMP" [label="CMP Assessment\nALP; AST; ALT; calcium; albumin;\nbilirubin; other metabolic measurements", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_ER" [label="Estrogen Receptor\nER staining result; positive percentage;\nfinal ER status", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_HER2" [label="HER2 Assessment\nIHC result; FISH result; ERBB2 signal;\nratio; final HER2 status", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_IMAGING_METHOD" [label="Imaging Method\nMammography; CT; MRI; ultrasound or other\napplicable imaging", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_INFLAMMATION" [label="Inflammation Assessment\nCRP and ESR; previous value; current\nvalue; date and trend", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_LESION" [label="Lesion Characteristics\nPresence; location; size; shape; margins;\ncount", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_PR" [label="Progesterone Receptor\nPR staining result; positive percentage;\nfinal PR status", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D1_SPREAD" [label="Spread Assessment\nRegional lymph-node findings and distant\nfindings", shape=box, fillcolor="#E4DFEC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "PRS_USE_DECISION" [label="Validated PRS Appropriate and\nAvailable?\nUse only when the score is relevant,\nappropriately calibrated and validated for\nthe population and intended clinical\ncontext", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "D2_ACTIVITY" [label="Physical Activity\nFrequency; duration; intensity;\noccupational and recreational activity;\nand sedentary time\nReported value: Up to ~50% lower colorectal risk; 48%\nlower among men in one cited study", shape=box, fillcolor="#E2F0D9", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_ALCOHOL" [label="Alcohol Consumption\nAlcohol type; quantity; frequency;\nduration; and current versus previous\nconsumption\nReported value: ~4-5% cancer attribution; cited male\nfractions ~25-50% for several cancers", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_DIET" [label="Diet and Nutrition\nOverall dietary pattern; fruit and\nvegetables; fibre; processed foods; red\nmeat; and overall nutritional quality", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_OBESITY" [label="Obesity and Body Weight\nBMI; body weight; waist measurement;\noverweight or obesity status; weight\nhistory\nReported value: Esophageal: 29% men, 37% women;\nendometrial: ~36%; gallbladder: 11% men,\n42% women", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_RED_MEAT" [label="Red and Processed Meat\nRed meat and processed meat consumption;\nservings and quantity per week\nReported value: Recommended maximum: 18 oz / ~510 g / 3-4\nservings per week", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_SMOKING" [label="Smoking and Tobacco\nCurrent and previous smoking; initiation\nage; duration; quantity; cessation;\nsecond-hand exposure; smokeless tobacco;\ncumulative exposure in pack-years\n(packs/day × years)\nReported value: >80% cited lung-cancer attribution;\n~10-20x lung-cancer risk", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D2_UV" [label="Ultraviolet Exposure\nSun exposure; UV exposure; occupation;\ntanning exposure; duration and protection", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_CLINICAL_STAGE" [label="Clinical TNM cTNM\nClinical stage established before\ndefinitive treatment using clinical\nexamination and diagnostic investigations", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_M0" [label="M0\nNo distant metastasis identified", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_M1" [label="M1\nDistant metastasis is present", shape=box, fillcolor="#F4B183", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_N0" [label="N0\nNo regional lymph-node metastasis", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_N1_N3" [label="N1 through N3\nIncreasing regional lymph-node\ninvolvement; exact definitions depend on\ncancer type", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_OVERVIEW" [label="Cancer Staging Overview\nCancer staging describes the anatomical\nextent of disease using clinical and\npathological information", shape=box, fillcolor="#C6E0B4", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "D3_PATH_STAGE" [label="Pathological TNM pTNM\nPathological TNM based on clinical\ninformation plus adequate surgical and\nhistopathological findings; available only\nwhen applicable", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_T1_T4" [label="T1 through T4\nIncreasing tumour size or increasing local\nextent; exact definitions depend on cancer\ntype", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "D3_TIS" [label="Tis Carcinoma In Situ\nCarcinoma in situ without invasion of\nsurrounding tissues", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "TNM_CONVERGENCE" [label="TNM Category Integration\nCombine the assessed T N and M categories\nbefore cancer-specific stage grouping", shape=box, fillcolor="#C6E0B4", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LUNG_PROBABILITY_MODEL" [label="Lung Cancer Risk Inputs\nUse recorded gender smoking status and\nquit-smoking age when applicable", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LUNG_GENDER_DECISION" [label="Gender for Lung Risk Model\nSelect the sex-specific probability branch\nrecorded in the source model", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "LUNG_FEMALE_SMOKING" [label="Female Smoking Status\nCurrent smoker former smoker or never\nsmoker", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "LUNG_MALE_SMOKING" [label="Male Smoking Status\nCurrent smoker former smoker or never\nsmoker", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "LUNG_FEMALE_RISK_CALC" [label="Female Lung Risk Calculation\nApply female smoking status and\nquit-smoking age when applicable", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LUNG_MALE_QUIT_AGE" [label="Quit-Smoking Age - Male Branch\nRecord cessation age for former smokers or\nmark it unavailable", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "LUNG_MALE_RISK_CALC" [label="Male Lung Risk Calculation\nApply male smoking status and quit-smoking\nage when applicable", shape=box, fillcolor="#DDEBF7", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "LUNG_FEMALE_VALUES" [label="Female Probability Values\nSmoker 0.185 (18.5%); quit smoker 0.026\n(2.6%); nonsmoker 0.004 (0.4%)", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "LUNG_RISK_ACTION_DECISION" [label="Lung-Risk Result Action?\nUse the source-model result with\napplicable screening guidance and clinical\njudgement; no universal numerical cutoff\nis assumed", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "LUNG_MALE_VALUES" [label="Male Probability Values\nSmoker 0.244 (24.4%); quit smoker 0.055\n(5.5%); nonsmoker value unavailable in\nsource", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "LUNG_QUIT_AGE" [label="Quit-Smoking Age - Female Branch\nRecord cessation age for former smokers or\nmark it unavailable", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "CLINICAL_TNM_FIELDS" [label="Recorded TNM Clinical Fields\nPrimary tumour size/local extension;\ninvolved-node count;\nmicro/macrometastasis; metastasis location", shape=box, fillcolor="#DDEBF7", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "ACTIVITY_ADDITIONAL_VALUE" [label="Additional Activity Finding\nInitially inactive men increasing\nactivity: about 13% lower reported risk", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "UV_REPORTED_VALUE" [label="UV Reported Value\nAbout 90% of skin cancers attributed to UV\nexposure in the cited source", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "LARYNGEAL_REPORTED_VALUE" [label="Laryngeal Smoking Value\nSmoking-attributable fraction exceeds 50%\nin the cited analysis", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "COMBINED_LIFESTYLE_VALUE" [label="Combined Lifestyle Impact\nAbout 18% of cancer cases and 16% of\ncancer deaths in one reviewed estimate", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "ENVIRONMENTAL_EXPOSURES" [label="Environmental Exposures\nAir pollution; occupational chemicals;\nindustrial exposure; dust and fibres;\nradiation; ultraviolet exposure; workplace\nconditions; duration and intensity", shape=box, fillcolor="#FFE699", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "FOOD_EVIDENCE_CAUTION" [label="Food Evidence and Cautions\nHigh-temperature cooking; acrylamide\nuncertainty; glycemic load; very hot\ndrinks; coffee; GM, irradiated food,\nmicrowave, supplements and detox claims", shape=box, fillcolor="#FFE699", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "LIFESTYLE_PATHWAYS" [label="Lifestyle Biological Pathways\nDNA damage; acetaldehyde; oxidative\nstress; inflammation;\nhormonal/metabolic/immune and microbiome\npathways; tobacco-alcohol and\nalcohol-hepatitis interactions", shape=box, fillcolor="#FFE699", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "LIFESTYLE_RISK_SUMMARY" [label="Lifestyle Risk Summary\nCombine assessed lifestyle and exposure\nfactors to inform risk-aware screening and\nclinical review", shape=box, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "POST_TREATMENT_RESTAGING" [label="Post-Treatment and Restaging\nyTNM after specified preoperative\ntreatment; rTNM for recurrence; retain\noriginal diagnosis stage", shape=box, fillcolor="#C6E0B4", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "STAGE_EXTENT_SYSTEMS" [label="Stage Subdivisions and SEER Extent\nIIA/IIB; IIIA/IIIB/IIIC; SEER In situ,\nLocalized, Regional, Distant and Unknown", shape=box, fillcolor="#C6E0B4", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "STAGING_INVESTIGATIONS" [label="Staging Investigations\nPhysical examination; CT; MRI; ultrasound;\nPET/PET-CT; endoscopy; biopsy and selected\nlaboratory tests", shape=box, fillcolor="#E4DFEC", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "ALTERNATIVE_STAGING" [label="Alternative Staging Systems\nLugano for selected lymphomas; FIGO for\nfemale reproductive cancers; conventional\nTNM may not apply to leukemia or many\nbrain/CNS tumours", shape=box, fillcolor="#C6E0B4", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "GRADE_PROFILE_PROGNOSIS" [label="Grade Profile and Prognosis\nStage is anatomical extent; grade is\ndifferentiation; profile includes\nhistology, biomarkers and\nmolecular/genetic features; stage is not\nindividual prognosis", shape=box, fillcolor="#C6E0B4", color="#8A98A6", penwidth=1.0, style="filled,dashed,rounded"];
+  "STAGING_CAUTION" [label="Cancer-Specific Staging Caution\nStage 0 and TNM groupings are\ncancer-specific; map M1 to Stage IV only\nwhere the applicable cancer-specific\nsystem defines it", shape=note, fillcolor="#E7E6E6", color="#8A98A6", penwidth=1.0, style="filled,dashed"];
+  "TREATMENT_PLANNING" [label="Multidisciplinary Treatment\nPlanning\nStage, profile/grade, patient factors and\npreferences guide surgery, radiation,\nchemotherapy, immunotherapy,\ntargeted/hormone/systemic therapy and\nsupportive or palliative care", shape=box, fillcolor="#F8CBAD", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "SURGICAL_PATHOLOGY_DECISION" [label="Surgical Specimen Available for\nPathological Staging?\npTNM is considered only when adequate\nsurgical and pathological information is\navailable", shape=diamond, fillcolor="#FFE699", color="#5B7C99", penwidth=1.2, style="filled"];
+  "SURGICAL_PATHOLOGY" [label="Surgical Pathology Review\nReview resection specimen primary tumour\nand regional nodes to support pathological\nTNM where applicable", shape=box, fillcolor="#F4CCCC", color="#5B7C99", penwidth=1.2, style="filled,rounded"];
+  "INITIAL" -> "PATIENT_PROFILE" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="Summarize assessed risks", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SYMPTOM_DECISION" -> "SCREENING" [xlabel="No - Routine screening", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SYMPTOM_DECISION" -> "DIAGNOSTIC_ENCOUNTER" [xlabel="Yes - Symptoms present", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SCREENING" -> "SUSPICIOUS_DECISION" [xlabel="Where applicable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "DIAGNOSTIC_ENCOUNTER" -> "CLINICAL_ASSESSMENT" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_ASSESSMENT" -> "CLINICAL_FINDINGS_CONVERGENCE" [xlabel="General clinical\nfindings", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SUSPICIOUS_DECISION" -> "ROUTINE_MONITORING" [xlabel="No - Routine monitoring", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SUSPICIOUS_DECISION" -> "DIAGNOSTIC_WORKUP" [xlabel="Yes - Investigate", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "ROUTINE_MONITORING" -> "FOLLOWUP" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=false];
+  "DIAGNOSTIC_WORKUP" -> "LAB_ASSESSMENT" [xlabel="Laboratory tests", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "DIAGNOSTIC_WORKUP" -> "IMAGING_ASSESSMENT" [xlabel="Imaging", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "ABNORMALITY_DECISION" -> "MONITOR_REASSESS" [xlabel="No - Reassess", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "MONITOR_REASSESS" -> "FOLLOWUP" [xlabel="Return to surveillance", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=false];
+  "ABNORMALITY_DECISION" -> "BIOPSY" [xlabel="Yes - Biopsy", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "BIOPSY" -> "PATHOLOGY" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PATHOLOGY" -> "MALIGNANCY_DECISION" [xlabel="Histopathology evidence", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "MALIGNANCY_DECISION" -> "NON_MALIGNANT_FOLLOWUP" [xlabel="No - Non-malignant", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "NON_MALIGNANT_FOLLOWUP" -> "TERMINAL" [xlabel="General care / close\npathway", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "MALIGNANCY_DECISION" -> "CANCER_CLASSIFICATION" [xlabel="Yes - Malignant", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CANCER_CLASSIFICATION" -> "BREAST_DECISION" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "BREAST_DECISION" -> "RECEPTOR_ASSESSMENT" [xlabel="Yes - Breast pathway", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGING_SYSTEM_DECISION" -> "TNM_ASSESSMENT" [xlabel="TNM applies", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "T_ASSESSMENT" [xlabel="T", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "N_ASSESSMENT" [xlabel="N", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "M_ASSESSMENT" [xlabel="M", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "M_ASSESSMENT" -> "TNM_CONVERGENCE" [xlabel="Assessed category", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "N_ASSESSMENT" -> "TNM_CONVERGENCE" [xlabel="Assessed category", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "T_ASSESSMENT" -> "TNM_CONVERGENCE" [xlabel="Assessed category", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "TNM_CONVERGENCE" -> "METASTASIS_DECISION" [xlabel="Integrated T / N / M", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "METASTASIS_DECISION" -> "M1_STAGE4_APPLICABILITY" [xlabel="M1 identified", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "METASTASIS_DECISION" -> "INSITU_DECISION" [xlabel="M0 - No metastasis", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "INSITU_DECISION" -> "STAGE_0" [xlabel="Tis - In situ", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "INSITU_DECISION" -> "STAGE_GROUP" [xlabel="Not in situ", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_GROUP" -> "STAGE_1" [xlabel="Stage I", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_GROUP" -> "STAGE_2" [xlabel="Stage II", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_GROUP" -> "STAGE_3" [xlabel="Stage III", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "FOLLOWUP" -> "PROGRESSION_DECISION" [xlabel="", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PROGRESSION_DECISION" -> "CLINICAL_ASSESSMENT" [xlabel="Yes - assess and confirm", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=false];
+  "PROGRESSION_DECISION" -> "TERMINAL" [xlabel="No - End workflow", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PATIENT_PROFILE" -> "HEREDITARY_RISK_ASSESSMENT" [xlabel="Assess inherited and\nfamilial risk", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_ASSESSMENT" -> "FAMILY_HISTORY_DETAILS" [xlabel="Structured family\nhistory", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "FAMILY_HISTORY_DETAILS" -> "HEREDITARY_EVAL_DECISION" [xlabel="Family pattern and\nphenotype", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_EVAL_DECISION" -> "GENETIC_COUNSELLING" [xlabel="Yes - evaluation\nindicated", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_EVAL_DECISION" -> "HEREDITARY_RISK_INTEGRATION" [xlabel="No - integrate available\nhistory", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "GENETIC_COUNSELLING" -> "GERMLINE_INTERPRETATION" [xlabel="Testing when clinically\nappropriate", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "GERMLINE_INTERPRETATION" -> "HEREDITARY_RISK_INTEGRATION" [xlabel="Clinically interpreted\ngermline result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PRS_ASSESSMENT" -> "HEREDITARY_RISK_INTEGRATION" [xlabel="Relative polygenic\nsusceptibility", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_ASSESSMENT" -> "HEREDITARY_SYNDROMES" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_SYNDROMES" -> "HEREDITARY_EVAL_DECISION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_ASSESSMENT" -> "HEREDITARY_GENES" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_GENES" -> "GERMLINE_INTERPRETATION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "PRS_LIMITATIONS" -> "PRS_ASSESSMENT" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_INTEGRATION" -> "LIFESTYLE" [xlabel="Continue multidomain\nrisk assessment", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE_RISK_SUMMARY" -> "INTEGRATED_BASELINE_RISK" [xlabel="Lifestyle and\nenvironmental context", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PATIENT_PROFILE" -> "INFECTION_HISTORY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "INFECTION_HISTORY" -> "INTEGRATED_BASELINE_RISK" [xlabel="Infection-related risk\ncontext", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "MULTIFACTORIAL_RISK_CONTEXT" -> "INTEGRATED_BASELINE_RISK" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_INTEGRATION" -> "INTEGRATED_BASELINE_RISK" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "RISK_SUSPICION_DIAGNOSIS_CAUTION" -> "INTEGRATED_BASELINE_RISK" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "INTEGRATED_BASELINE_RISK" -> "MEDICAL_SCREENING_HISTORY" [xlabel="Review prior clinical\ncontext", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "MEDICAL_SCREENING_HISTORY" -> "TEMPORAL_HISTORY_ASSESSMENT" [xlabel="Compare with prior\nhistory", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LONGITUDINAL_CONTEXT" -> "TEMPORAL_HISTORY_ASSESSMENT" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TEMPORAL_HISTORY_ASSESSMENT" -> "SYMPTOM_DECISION" [xlabel="Evaluate current\nsymptoms and changes", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_BREAST" -> "CLINICAL_FINDINGS_CONVERGENCE" [xlabel="Breast-specific findings\nwhere applicable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_FINDINGS_CONVERGENCE" -> "SUSPICIOUS_DECISION" [xlabel="Integrated clinical\nfindings", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_CBC" -> "LAB_RESULTS_CONVERGENCE" [xlabel="Result and trend", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_CMP" -> "LAB_RESULTS_CONVERGENCE" [xlabel="Result and trend", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_INFLAMMATION" -> "LAB_RESULTS_CONVERGENCE" [xlabel="Result and trend", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_IMAGING_METHOD" -> "IMAGING_RESULTS_CONVERGENCE" [xlabel="Imaging evidence", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_LESION" -> "IMAGING_RESULTS_CONVERGENCE" [xlabel="Imaging evidence", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_SPREAD" -> "IMAGING_RESULTS_CONVERGENCE" [xlabel="Imaging evidence", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LAB_RESULTS_CONVERGENCE" -> "INTEGRATED_DIAGNOSTIC_FINDINGS" [xlabel="Laboratory\ninterpretation", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "IMAGING_RESULTS_CONVERGENCE" -> "INTEGRATED_DIAGNOSTIC_FINDINGS" [xlabel="Imaging interpretation", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_FINDINGS_CONVERGENCE" -> "INTEGRATED_DIAGNOSTIC_FINDINGS" [xlabel="Clinical context", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "INTEGRATED_DIAGNOSTIC_FINDINGS" -> "ABNORMALITY_DECISION" [xlabel="Combined evidence\nreviewed", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_ASSESSMENT" -> "CLINICAL_WEIGHT_LOSS" [xlabel="Weight-loss assessment", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_ASSESSMENT" -> "CLINICAL_PERSISTENT_PAIN" [xlabel="Pain assessment", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_ASSESSMENT" -> "CLINICAL_BLEEDING" [xlabel="Bleeding assessment", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_WEIGHT_LOSS" -> "CLINICAL_FINDINGS_CONVERGENCE" [xlabel="Clinical finding", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_PERSISTENT_PAIN" -> "CLINICAL_FINDINGS_CONVERGENCE" [xlabel="Clinical finding", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_BLEEDING" -> "CLINICAL_FINDINGS_CONVERGENCE" [xlabel="Clinical finding", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_ER" -> "BREAST_PROFILE_CONVERGENCE" [xlabel="Biomarker result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_HER2" -> "BREAST_PROFILE_CONVERGENCE" [xlabel="Biomarker result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D1_PR" -> "BREAST_PROFILE_CONVERGENCE" [xlabel="Biomarker result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "BREAST_DECISION" -> "STAGING_SYSTEM_DECISION" [xlabel="No - non-breast pathway", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "BREAST_PROFILE_CONVERGENCE" -> "STAGING_SYSTEM_DECISION" [xlabel="Breast profile\nidentified", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGING_SYSTEM_DECISION" -> "ALTERNATIVE_STAGING" [xlabel="Alternative system\napplies", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "ALTERNATIVE_STAGING" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Cancer-specific stage or\nextent", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "T_ASSESSMENT" -> "D3_T1_T4" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "T_ASSESSMENT" -> "D3_TIS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "N_ASSESSMENT" -> "D3_N0" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "N_ASSESSMENT" -> "D3_N1_N3" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "M_ASSESSMENT" -> "D3_M0" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "M_ASSESSMENT" -> "D3_M1" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "M1_STAGE4_APPLICABILITY" -> "STAGE_4" [xlabel="Yes - system maps to\nStage IV", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "M1_STAGE4_APPLICABILITY" -> "CANCER_SPECIFIC_STAGE_RESULT" [xlabel="No - use selected system", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CANCER_SPECIFIC_STAGE_RESULT" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_0" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_1" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_2" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_3" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_4" -> "STAGE_RESULT_CONVERGENCE" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_RESULT_CONVERGENCE" -> "STAGE_PROFILE_INTEGRATION" [xlabel="Applicable stage result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "BREAST_PROFILE_CONVERGENCE" -> "STAGE_PROFILE_INTEGRATION" [xlabel="HER2 / ER / PR profile", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=false];
+  "PATHOLOGY" -> "GRADE_PROFILE_PROGNOSIS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "GRADE_PROFILE_PROGNOSIS" -> "STAGE_PROFILE_INTEGRATION" [xlabel="Grade and tumour profile", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "STAGE_PROFILE_INTEGRATION" -> "TREATMENT_PLANNING" [xlabel="Integrated stage /\nprofile", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "CLINICAL_ASSESSMENT" -> "D1_BREAST" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LAB_ASSESSMENT" -> "D1_CBC" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LAB_ASSESSMENT" -> "D1_CMP" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LAB_ASSESSMENT" -> "D1_INFLAMMATION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "IMAGING_ASSESSMENT" -> "D1_IMAGING_METHOD" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "IMAGING_ASSESSMENT" -> "D1_LESION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "IMAGING_ASSESSMENT" -> "D1_SPREAD" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "BIOPSY" -> "D1_BIOPSY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "RECEPTOR_ASSESSMENT" -> "D1_HER2" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "RECEPTOR_ASSESSMENT" -> "D1_ER" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "RECEPTOR_ASSESSMENT" -> "D1_PR" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "HEREDITARY_RISK_ASSESSMENT" -> "PRS_USE_DECISION" [xlabel="Assess PRS suitability", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PRS_USE_DECISION" -> "PRS_ASSESSMENT" [xlabel="Yes - validated and\nappropriate", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "PRS_USE_DECISION" -> "HEREDITARY_RISK_INTEGRATION" [xlabel="No - do not use PRS", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_SMOKING" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_ALCOHOL" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_DIET" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_RED_MEAT" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_OBESITY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_ACTIVITY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "D2_UV" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "D3_OVERVIEW" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "METASTASIS_DECISION" -> "D3_M0" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "METASTASIS_DECISION" -> "D3_M1" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "INSITU_DECISION" -> "D3_TIS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "D3_TIS" -> "STAGE_0" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "PATIENT_PROFILE" -> "LUNG_PROBABILITY_MODEL" [xlabel="Lung probability", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_PROBABILITY_MODEL" -> "LUNG_GENDER_DECISION" [xlabel="Select branch", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_GENDER_DECISION" -> "LUNG_FEMALE_SMOKING" [xlabel="Female", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_GENDER_DECISION" -> "LUNG_MALE_SMOKING" [xlabel="Male", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_FEMALE_SMOKING" -> "LUNG_FEMALE_RISK_CALC" [xlabel="Current smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_FEMALE_SMOKING" -> "LUNG_FEMALE_RISK_CALC" [xlabel="Never smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_FEMALE_SMOKING" -> "LUNG_QUIT_AGE" [xlabel="Former smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_QUIT_AGE" -> "LUNG_FEMALE_RISK_CALC" [xlabel="Age recorded /\nunavailable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_FEMALE_RISK_CALC" -> "LUNG_FEMALE_VALUES" [xlabel="Probability result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_SMOKING" -> "LUNG_MALE_RISK_CALC" [xlabel="Current smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_SMOKING" -> "LUNG_MALE_RISK_CALC" [xlabel="Never smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_SMOKING" -> "LUNG_MALE_QUIT_AGE" [xlabel="Former smoker", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_QUIT_AGE" -> "LUNG_MALE_RISK_CALC" [xlabel="Age recorded /\nunavailable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_RISK_CALC" -> "LUNG_MALE_VALUES" [xlabel="Probability result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_FEMALE_VALUES" -> "LUNG_RISK_ACTION_DECISION" [xlabel="Female probability\nresult", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_MALE_VALUES" -> "LUNG_RISK_ACTION_DECISION" [xlabel="Male probability result", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D2_SMOKING" -> "LUNG_PROBABILITY_MODEL" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "LUNG_RISK_ACTION_DECISION" -> "SCREENING" [xlabel="Review / screening\nindicated", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "LUNG_RISK_ACTION_DECISION" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="Continue general risk\nassessment", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "CLINICAL_TNM_FIELDS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "D3_CLINICAL_STAGE" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "D2_ACTIVITY" -> "ACTIVITY_ADDITIONAL_VALUE" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "D2_UV" -> "UV_REPORTED_VALUE" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "D2_SMOKING" -> "LARYNGEAL_REPORTED_VALUE" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "COMBINED_LIFESTYLE_VALUE" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "ENVIRONMENTAL_EXPOSURES" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "FOOD_EVIDENCE_CAUTION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "LIFESTYLE" -> "LIFESTYLE_PATHWAYS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "D2_ACTIVITY" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_ALCOHOL" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_DIET" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_OBESITY" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_RED_MEAT" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_SMOKING" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "D2_UV" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "ENVIRONMENTAL_EXPOSURES" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "FOOD_EVIDENCE_CAUTION" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "LIFESTYLE_PATHWAYS" -> "LIFESTYLE_RISK_SUMMARY" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=false];
+  "TNM_ASSESSMENT" -> "POST_TREATMENT_RESTAGING" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "STAGE_EXTENT_SYSTEMS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "STAGING_INVESTIGATIONS" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TNM_ASSESSMENT" -> "STAGING_CAUTION" [xlabel="", style=dashed, color="#8798A6", fontcolor="#33495B", fontsize=7, penwidth=1.0, arrowsize=0.70, headclip=true, tailclip=true, constraint=true];
+  "TREATMENT_PLANNING" -> "SURGICAL_PATHOLOGY_DECISION" [xlabel="After initial treatment\ndecision", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SURGICAL_PATHOLOGY_DECISION" -> "FOLLOWUP" [xlabel="No - pTNM unavailable /\nnot applicable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SURGICAL_PATHOLOGY_DECISION" -> "SURGICAL_PATHOLOGY" [xlabel="Yes - surgical specimen\navailable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "SURGICAL_PATHOLOGY" -> "D3_PATH_STAGE" [xlabel="Derive pTNM where\napplicable", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  "D3_PATH_STAGE" -> "FOLLOWUP" [xlabel="Record postoperative\npathological stage", style=solid, color="#4F6F86", fontcolor="#33495B", fontsize=7, penwidth=1.5, arrowsize=0.95, headclip=true, tailclip=true, constraint=true];
+  subgraph cluster_color_legend {
+    label="Legend - Color and Line Meaning";
+    labelloc="t"; fontsize=12; fontname="Arial Bold";
+    color="#AFC2D1"; bgcolor="#FAFCFD"; style="rounded"; margin=10;
+    "COLOR_LEGEND" [
+      shape=plain,
+      label=<
+        <TABLE BORDER="0" CELLBORDER="0" CELLSPACING="5" CELLPADDING="4">
+          <TR><TD BGCOLOR="#DDEBF7" WIDTH="24"> </TD><TD ALIGN="LEFT">Clinical process</TD><TD BGCOLOR="#9DC3E6" WIDTH="24"> </TD><TD ALIGN="LEFT">Start / end / major state</TD></TR>
+          <TR><TD BGCOLOR="#FFE699"> </TD><TD ALIGN="LEFT">Decision / lifestyle risk</TD><TD BGCOLOR="#E4DFEC"> </TD><TD ALIGN="LEFT">Laboratory / imaging</TD></TR>
+          <TR><TD BGCOLOR="#F4CCCC"> </TD><TD ALIGN="LEFT">Biopsy / pathology</TD><TD BGCOLOR="#F8CBAD"> </TD><TD ALIGN="LEFT">Biomarkers / receptors</TD></TR>
+          <TR><TD BGCOLOR="#E2F0D9"> </TD><TD ALIGN="LEFT">Monitoring / protective</TD><TD BGCOLOR="#C6E0B4"> </TD><TD ALIGN="LEFT">TNM staging</TD></TR>
+          <TR><TD BGCOLOR="#FFD966"> </TD><TD ALIGN="LEFT">Cancer stage group</TD><TD BGCOLOR="#F4B183"> </TD><TD ALIGN="LEFT">Advanced / metastatic</TD></TR>
+          <TR><TD BGCOLOR="#E7E6E6"> </TD><TD ALIGN="LEFT">Reported value / note</TD><TD ALIGN="LEFT"><B>Lines</B></TD><TD ALIGN="LEFT">Solid: workflow; Dashed: detail</TD></TR>
+        </TABLE>
+      >
+    ];
+  }
+  "RIGHT_SPACER" [shape=box, label="", width=8, height=0.01, fixedsize=true, style=invis];
+  { rank=same; "TREATMENT_PLANNING"; "RIGHT_SPACER"; "COLOR_LEGEND"; }
+  "TREATMENT_PLANNING" -> "RIGHT_SPACER" [style=invis, weight=100];
+  "RIGHT_SPACER" -> "COLOR_LEGEND" [style=invis, weight=100];
+}
